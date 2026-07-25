@@ -4,855 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0C2340">
-<title>Fulcro Consulting — Operaciones potenciadas</title>
-<meta name="description" content="Consultoría de operaciones para PyMEs. Estructura, procesos y métricas para que tu negocio escale sin caos. Fernando Herrador — México, El Salvador y EUA.">
+<title>Fulcro Consulting — Experiencia de cliente y productividad con IA</title>
+<meta name="description" content="Mejoramos la experiencia de tus clientes con tecnología y le devolvemos tiempo a tu negocio con automatización inteligente. Fernando Herrador — CX, AI &amp; Automation Consultant.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Fulcro Consulting — Operaciones potenciadas">
-<meta property="og:description" content="Consultoría de operaciones para PyMEs. Estructura, procesos y métricas para escalar sin caos.">
+<meta property="og:title" content="Fulcro Consulting — Experiencia de cliente y productividad con IA">
+<meta property="og:description" content="Mejoramos la experiencia de tus clientes con tecnología. Les devolvemos tiempo a tu negocio, a tu equipo y a ti con automatización inteligente.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://fulcroconsulting.org">
+<meta property="og:locale" content="es_MX">
+
+<link rel="canonical" href="https://fulcroconsulting.org">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-<style>
-  :root {
-    --navy:        #0C2340;
-    --navy-deep:   #071629;
-    --blue:        #185FA5;
-    --blue-bright: #378ADD;
-    --blue-muted:  #5A8AB0;
-    --ice:         #B5D4F4;
-    --blue-light:  #E6F1FB;
-    --teal:        #1D9E75;
-    --teal-light:  #E1F5EE;
-    --offwhite:    #F5F5F0;
-    --bg:          #fafaf8;
-    --ink:         #1a1a1a;
-    --ink-soft:    #4a4a4a;
-    --ink-muted:   #888780;
-    --border:      rgba(12,35,64,0.10);
-    --border-med:  rgba(12,35,64,0.18);
-    --wa-green:    #25D366;
-    --wa-green-dk: #1DA851;
-  }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<link rel="stylesheet" href="css/styles.css">
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-  body {
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--ink-soft);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  /* ───────── NAVEGACIÓN ───────── */
-  .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(12, 35, 64, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 0.5px solid rgba(255,255,255,0.08);
-    transition: background 0.3s ease;
-  }
-  .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 14px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .nav-brand-word {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: -0.03em;
-  }
-  .nav-brand-tag {
-    font-size: 9px;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-top: 1px;
-  }
-  .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: var(--wa-green);
-    color: #fff;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-  .nav-cta:hover {
-    background: var(--wa-green-dk);
-    transform: translateY(-1px);
-  }
-  .nav-cta svg { width: 14px; height: 14px; }
-  @media (max-width: 540px) {
-    .nav-cta-text { display: none; }
-    .nav-cta { padding: 8px 10px; }
-  }
-
-  /* ───────── HERO ───────── */
-  .hero {
-    position: relative;
-    background: var(--navy);
-    color: #fff;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: 140px 28px 100px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -30%; right: -20%;
-    width: 900px; height: 900px;
-    background: radial-gradient(circle, rgba(55,138,221,0.15) 0%, transparent 55%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -40%; left: -15%;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 60%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-  }
-  /* Grid sutil de fondo */
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-  }
-
-  .hero-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fade-up 0.8s ease 0.1s forwards;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 28px;
-    height: 0.5px;
-    background: rgba(255,255,255,0.35);
-    display: block;
-  }
-
-  .hero-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(44px, 8.5vw, 104px);
-    line-height: 0.98;
-    letter-spacing: -0.035em;
-    color: #fff;
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fade-up 0.9s ease 0.25s forwards;
-  }
-  .hero-title em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--blue-bright);
-    letter-spacing: -0.01em;
-  }
-  .hero-title .amp {
-    color: rgba(255,255,255,0.35);
-    font-weight: 400;
-  }
-
-  .hero-desc {
-    font-size: clamp(16px, 2vw, 19px);
-    font-weight: 300;
-    color: rgba(255,255,255,0.75);
-    max-width: 580px;
-    line-height: 1.55;
-    margin-bottom: 44px;
-    letter-spacing: -0.005em;
-    opacity: 0;
-    animation: fade-up 0.9s ease 0.4s forwards;
-  }
-
-  .hero-cta-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-    opacity: 0;
-    animation: fade-up 0.9s ease 0.55s forwards;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 26px;
-    background: var(--wa-green);
-    color: #fff;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 8px 24px rgba(37,211,102,0.25);
-  }
-  .btn-primary:hover {
-    background: var(--wa-green-dk);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(37,211,102,0.35);
-  }
-  .btn-primary svg { width: 18px; height: 18px; }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 15px 22px;
-    color: rgba(255,255,255,0.85);
-    border: 0.5px solid rgba(255,255,255,0.25);
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.005em;
-    transition: border 0.25s ease, background 0.25s ease;
-  }
-  .btn-secondary:hover {
-    border-color: rgba(255,255,255,0.5);
-    background: rgba(255,255,255,0.04);
-  }
-  .btn-secondary svg { width: 14px; height: 14px; transition: transform 0.25s ease; }
-  .btn-secondary:hover svg { transform: translateY(2px); }
-
-  /* Metadatos al pie del hero */
-  .hero-meta {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 0.5px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-    opacity: 0;
-    animation: fade-up 0.9s ease 0.75s forwards;
-  }
-  .hero-meta-item {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    line-height: 1.7;
-  }
-  .hero-meta-item strong {
-    color: rgba(255,255,255,0.7);
-    font-weight: 500;
-    display: block;
-    margin-top: 3px;
-  }
-
-  /* ───────── SECCIONES ───────── */
-  .section {
-    padding: 120px 28px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .section-label {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--blue);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-  .section-label::before {
-    content: '';
-    width: 28px;
-    height: 0.5px;
-    background: var(--blue);
-  }
-
-  .section-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(32px, 5vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: var(--navy);
-    margin-bottom: 20px;
-    max-width: 820px;
-  }
-  .section-title em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--blue);
-  }
-  .section-desc {
-    font-size: clamp(15px, 1.6vw, 17px);
-    font-weight: 300;
-    color: var(--ink-soft);
-    line-height: 1.65;
-    max-width: 680px;
-    letter-spacing: -0.005em;
-  }
-
-  /* ───────── PROMESA (sección "Cómo trabajo") ───────── */
-  .promise {
-    background: #fff;
-    position: relative;
-  }
-  .promise::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--border-med) 20%, var(--border-med) 80%, transparent 100%);
-  }
-  .promise-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    margin-top: 80px;
-    background: var(--border);
-    border: 0.5px solid var(--border-med);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .promise-item {
-    background: #fff;
-    padding: 40px 32px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: background 0.4s ease;
-  }
-  .promise-item:hover {
-    background: var(--bg);
-  }
-  .promise-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--blue);
-    letter-spacing: 0.2em;
-    margin-bottom: 24px;
-  }
-  .promise-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 14px;
-    letter-spacing: -0.015em;
-    line-height: 1.2;
-  }
-  .promise-desc {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.65;
-    font-weight: 300;
-  }
-  @media (max-width: 780px) {
-    .promise-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ───────── SERVICIOS ───────── */
-  .services {
-    background: var(--bg);
-    position: relative;
-  }
-  .services-list {
-    margin-top: 72px;
-    border-top: 0.5px solid var(--border-med);
-  }
-  .service {
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 36px;
-    padding: 38px 0;
-    border-bottom: 0.5px solid var(--border-med);
-    align-items: start;
-    transition: padding 0.35s ease;
-    cursor: default;
-    position: relative;
-  }
-  .service::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(24,95,165,0.025) 50%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-  }
-  .service:hover::after { opacity: 1; }
-  .service:hover { padding-left: 12px; padding-right: 12px; }
-
-  .service-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--blue);
-    letter-spacing: 0.12em;
-    padding-top: 6px;
-  }
-  .service-body {
-    max-width: 560px;
-  }
-  .service-name {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: clamp(22px, 3vw, 30px);
-    font-weight: 400;
-    color: var(--navy);
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  .service-desc {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-    font-weight: 300;
-    margin-bottom: 14px;
-  }
-  .service-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .service-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 4px;
-    letter-spacing: 0.06em;
-    background: var(--blue-light);
-    color: var(--navy);
-  }
-  .service-tag.entry {
-    background: var(--teal-light);
-    color: #085041;
-  }
-  .service-tag.recurring {
-    background: #FAEEDA;
-    color: #633806;
-  }
-  .service-badge {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    font-weight: 500;
-    padding: 6px 12px;
-    border: 0.5px solid var(--border-med);
-    border-radius: 20px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    white-space: nowrap;
-    margin-top: 8px;
-  }
-  .service-badge.entry-badge {
-    background: var(--teal);
-    border-color: var(--teal);
-    color: #fff;
-  }
-
-  @media (max-width: 780px) {
-    .service {
-      grid-template-columns: 60px 1fr;
-      gap: 20px;
-      padding: 28px 0;
-    }
-    .service-badge { grid-column: 1 / -1; margin-top: 4px; justify-self: start; }
-  }
-
-  /* ───────── QUIÉN SOY ───────── */
-  .about {
-    background: #fff;
-    padding: 120px 28px;
-  }
-  .about-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  @media (max-width: 860px) {
-    .about-inner { grid-template-columns: 1fr; gap: 48px; }
-  }
-  .about-quote {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(22px, 3vw, 30px);
-    line-height: 1.4;
-    color: var(--navy);
-    letter-spacing: -0.015em;
-    position: relative;
-    padding-left: 28px;
-  }
-  .about-quote::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 12px; bottom: 12px;
-    width: 2px;
-    background: var(--blue);
-  }
-  .about-quote em {
-    font-style: normal;
-    font-weight: 500;
-    color: var(--blue);
-  }
-  .about-signer {
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 0.5px solid var(--border);
-    font-size: 13px;
-    color: var(--ink-muted);
-    line-height: 1.7;
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.03em;
-  }
-  .about-signer strong {
-    color: var(--navy);
-    font-weight: 500;
-    display: block;
-    letter-spacing: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 15px;
-    margin-bottom: 2px;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border: 0.5px solid var(--border-med);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .stat {
-    padding: 32px 28px;
-    border-right: 0.5px solid var(--border);
-    border-bottom: 0.5px solid var(--border);
-  }
-  .stat:nth-child(2n) { border-right: none; }
-  .stat:nth-last-child(-n+2) { border-bottom: none; }
-  .stat-value {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(36px, 5vw, 48px);
-    color: var(--navy);
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .stat-value em {
-    font-style: normal;
-    font-size: 0.55em;
-    color: var(--blue-muted);
-    font-weight: 400;
-    margin-left: 2px;
-  }
-  .stat-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 500;
-    color: var(--ink-muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    line-height: 1.4;
-  }
-
-  /* ───────── CTA FINAL ───────── */
-  .cta-final {
-    background: var(--navy);
-    color: #fff;
-    padding: 120px 28px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-final::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(55,138,221,0.12) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(29,158,117,0.08) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  .cta-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-  .cta-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-  }
-  .cta-label::before, .cta-label::after {
-    content: '';
-    width: 24px;
-    height: 0.5px;
-    background: rgba(255,255,255,0.35);
-  }
-  .cta-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(32px, 5.5vw, 56px);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: #fff;
-    margin-bottom: 18px;
-  }
-  .cta-title em {
-    font-style: italic;
-    color: var(--blue-bright);
-    font-weight: 400;
-  }
-  .cta-desc {
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-    margin-bottom: 40px;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ───────── FOOTER ───────── */
-  .footer {
-    background: var(--navy-deep);
-    color: rgba(255,255,255,0.55);
-    padding: 56px 28px 28px;
-    font-size: 13px;
-  }
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 40px;
-    padding-bottom: 36px;
-    border-bottom: 0.5px solid rgba(255,255,255,0.08);
-    margin-bottom: 24px;
-    align-items: start;
-  }
-  @media (max-width: 640px) {
-    .footer-top { grid-template-columns: 1fr; }
-  }
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .footer-brand-word {
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: -0.03em;
-  }
-  .footer-brand-tag {
-    font-size: 9px;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-top: 1px;
-  }
-  .footer-tagline {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: -0.005em;
-  }
-
-  .footer-contact {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    line-height: 2;
-    letter-spacing: -0.01em;
-  }
-  .footer-contact a {
-    color: rgba(255,255,255,0.7);
-    transition: color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .footer-contact a:hover { color: var(--blue-bright); }
-  .footer-contact svg { width: 12px; height: 12px; opacity: 0.5; }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.35);
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.05em;
-  }
-
-  /* ───────── ANIMACIONES ───────── */
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 0.35; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.1); }
-  }
-  .hero-logo-dot {
-    animation: pulse-dot 3s ease-in-out infinite;
-  }
-
-  /* Reveal al hacer scroll */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Accesibilidad */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    .reveal { opacity: 1; transform: none; }
-  }
-
-  ::selection {
-    background: var(--blue-bright);
-    color: #fff;
-  }
-
-  /* Ajustes móviles */
-  @media (max-width: 768px) {
-    .hero {
-      padding: 110px 22px 48px;
-      min-height: auto;
-      align-items: flex-start;
-    }
-    .hero-desc {
-      margin-bottom: 32px;
-      max-width: 100%;
-    }
-    .hero-meta {
-      margin-top: 40px;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .hero-meta-item {
-      display: flex;
-      gap: 10px;
-      align-items: baseline;
-    }
-    .hero-meta-item strong {
-      display: inline;
-      margin-top: 0;
-    }
-    .section { padding: 80px 22px; }
-    .about { padding: 80px 22px; }
-    .cta-final { padding: 80px 22px; }
-    .hero-cta-row { flex-direction: column; align-items: stretch; }
-    .hero-cta-row a { justify-content: center; }
-    .about-stats { grid-template-columns: 1fr; }
-    .stat { border-right: none !important; }
-    .stat:last-child { border-bottom: none; }
-    .stat:not(:last-child) { border-bottom: 0.5px solid var(--border); }
-    .promise-grid { grid-template-columns: 1fr; gap: 0; }
-    .promise-item { padding: 28px 24px; }
-    .service { grid-template-columns: 50px 1fr; gap: 16px; }
-    .service-badge { grid-column: 1 / -1; justify-self: start; }
-    .about-inner { grid-template-columns: 1fr; gap: 48px; }
-  }
-</style>
+<!--
+  ANALÍTICA — pega tus IDs reales cuando los tengas.
+  1) Google Search Console: reemplaza XXXXXXXX y descomenta la línea.
+  2) Google Analytics 4: reemplaza G-XXXXXXX y descomenta el bloque.
+  3) Microsoft Clarity: reemplaza XXXXXXXXXX y descomenta el bloque.
+-->
+<!-- <meta name="google-site-verification" content="XXXXXXXX"> -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+-->
+<!--
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "XXXXXXXXXX");
+</script>
+-->
 </head>
-<body>
+<body class="bg-bg text-ink-soft font-sans antialiased" x-data="{ mobileNav: false }">
 
 <!-- ═════════════════════════════ NAV ═════════════════════════════ -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-brand">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-navy/85 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-6 md:px-7 py-3.5 flex justify-between items-center">
+    <a href="#" class="flex items-center gap-2.5">
       <svg width="28" height="28" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="44" height="44" rx="9" fill="rgba(255,255,255,0.08)"/>
         <polygon points="22,28 17,34 27,34" fill="#378ADD"/>
@@ -861,235 +63,416 @@
         <circle cx="12" cy="31" r="2" fill="rgba(255,255,255,0.35)"/>
       </svg>
       <div>
-        <div class="nav-brand-word">Fulcro</div>
-        <div class="nav-brand-tag">consulting</div>
+        <div class="text-white text-[18px] font-medium tracking-tight leading-none">Fulcro</div>
+        <div class="text-white/55 text-[9px] tracking-[0.2em] uppercase mt-0.5">consulting</div>
       </div>
     </a>
-    <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20operaci%C3%B3n." class="nav-cta" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      <span class="nav-cta-text">WhatsApp</span>
+
+    <div class="hidden md:flex items-center gap-7 text-[13.5px] text-white/70">
+      <a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a>
+      <a href="#proceso" class="hover:text-white transition-colors">Cómo trabajamos</a>
+      <a href="#sobre-mi" class="hover:text-white transition-colors">Quién opera Fulcro</a>
+      <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+    </div>
+
+    <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20negocio." target="_blank" rel="noopener"
+       class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-wa-green hover:bg-wa-green-dk rounded-md text-white text-[13px] font-medium transition-all hover:-translate-y-0.5">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="hidden sm:inline">WhatsApp</span>
     </a>
   </div>
 </nav>
 
 <!-- ═════════════════════════════ HERO ═════════════════════════════ -->
-<section class="hero">
-  <div class="hero-grid"></div>
+<section class="relative bg-navy text-white min-h-[100dvh] flex items-center overflow-hidden pt-[120px] pb-20 px-6">
+  <div class="absolute -top-[30%] -right-[20%] w-[900px] h-[900px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(55,138,221,0.15) 0%, transparent 55%);"></div>
+  <div class="absolute -bottom-[40%] -left-[15%] w-[700px] h-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 60%);"></div>
 
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Fulcro consulting · Mérida, México</div>
+  <div class="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2.5 font-mono text-[11px] font-medium text-white/55 tracking-[0.22em] uppercase mb-8" data-aos="fade-up">
+        <span class="w-7 h-px bg-white/35"></span> Fulcro Consulting · Mérida, México
+      </div>
 
-    <h1 class="hero-title">
-      Operaciones<br>
-      <em>potenciadas.</em>
-    </h1>
+      <h1 class="font-serif font-normal text-[clamp(38px,6.5vw,68px)] leading-[1.05] tracking-tight mb-7" data-aos="fade-up" data-aos-delay="100">
+        Mejoramos la experiencia de tus clientes con <em class="italic text-blue-bright">tecnología</em>.
+      </h1>
 
-    <p class="hero-desc">
-      Consultoría de operaciones para PyMEs que crecen. Estructura, procesos y métricas para que tu negocio escale sin caos &mdash; y sin depender de personas clave.
+      <p class="text-[clamp(16px,2vw,19px)] font-light text-white/75 max-w-xl leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="200">
+        Les devolvemos tiempo a tu negocio, a tu equipo y a ti con automatización inteligente. Menos tareas repetitivas, más conversaciones que sí importan.
+      </p>
+
+      <div class="flex flex-wrap gap-3.5" data-aos="fade-up" data-aos-delay="300">
+        <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20negocio." target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2.5 px-6 py-3.5 bg-wa-green hover:bg-wa-green-dk rounded-lg text-white text-[15px] font-medium transition-all hover:-translate-y-0.5 shadow-[0_8px_24px_rgba(37,211,102,0.25)]">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agenda una llamada
+        </a>
+        <a href="#soluciones" class="inline-flex items-center gap-2 px-6 py-3.5 text-white/85 border border-white/25 hover:border-white/50 hover:bg-white/5 rounded-lg text-[14px] transition-all">
+          Ver soluciones
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Tira de tecnologías -->
+      <div class="mt-16 pt-6 border-t border-white/10" data-aos="fade-up" data-aos-delay="400">
+        <div class="font-mono text-[10.5px] text-white/40 tracking-[0.14em] uppercase mb-4">Tecnología con la que trabajamos</div>
+        <div class="flex flex-wrap items-center gap-x-7 gap-y-3 opacity-80">
+          <img src="https://cdn.simpleicons.org/claude/ffffff" alt="Claude" class="h-5" loading="lazy">
+          <img src="https://cdn.simpleicons.org/google/ffffff" alt="Google Workspace" class="h-5" loading="lazy">
+          <img src="https://cdn.simpleicons.org/meta/ffffff" alt="Meta / WhatsApp Business API" class="h-5" loading="lazy">
+          <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="WhatsApp Business" class="h-5" loading="lazy">
+          <img src="https://cdn.simpleicons.org/n8n/ffffff" alt="n8n" class="h-5" loading="lazy">
+          <img src="https://cdn.simpleicons.org/zapier/ffffff" alt="Zapier" class="h-5" loading="lazy">
+          <img src="https://cdn.simpleicons.org/chatwoot/ffffff" alt="Chatwoot" class="h-5" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel de mockups: WhatsApp / Dashboard / Asistente interno -->
+    <div class="relative h-[440px] md:h-[480px]" data-aos="fade-left" data-aos-delay="200"
+         x-data="{ slide: 0, n: 3, timer: null }"
+         x-init="timer = setInterval(() => slide = (slide + 1) % n, 4500)">
+
+      <!-- Panel 1: Conversación WhatsApp -->
+      <div class="absolute inset-0 transition-all duration-700" :class="slide === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
+        <div class="bg-[#0b141a] rounded-2xl shadow-2xl h-full flex flex-col overflow-hidden border border-white/10">
+          <div class="bg-navy-deep px-4 py-3 flex items-center gap-2.5 border-b border-white/10">
+            <div class="w-8 h-8 rounded-full bg-wa-green flex items-center justify-center text-white text-xs font-medium">FC</div>
+            <div>
+              <div class="text-white text-[13px] font-medium">Asistente Fulcro</div>
+              <div class="text-teal text-[10.5px]">en línea</div>
+            </div>
+          </div>
+          <div class="flex-1 p-4 space-y-3 overflow-hidden" style="background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 16px 16px;">
+            <div class="bg-[#202c33] text-white/90 text-[13px] rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]">Hola, ¿tienen disponibilidad esta semana?</div>
+            <div class="bg-[#005c4b] text-white/90 text-[13px] rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] ml-auto">¡Claro! Tenemos espacio jueves 10am o viernes 4pm. ¿Cuál te acomoda?</div>
+            <div class="bg-[#202c33] text-white/90 text-[13px] rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]">Viernes 4pm perfecto</div>
+            <div class="bg-[#005c4b] text-white/90 text-[13px] rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] ml-auto">Quedaste agendado ✓ Te llega un recordatorio un día antes</div>
+          </div>
+          <div class="px-4 py-3 border-t border-white/10 text-white/30 text-[11px] font-mono">Respuesta automática · 24/7</div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Dashboard -->
+      <div class="absolute inset-0 transition-all duration-700" :class="slide === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
+        <div class="bg-white rounded-2xl shadow-2xl h-full p-6 border border-white/10">
+          <div class="flex items-center justify-between mb-5">
+            <div class="text-navy font-serif text-lg">Reporte semanal</div>
+            <div class="font-mono text-[10px] text-ink-muted uppercase tracking-wide">Lun 9:00am</div>
+          </div>
+          <div class="grid grid-cols-3 gap-3 mb-5">
+            <div class="bg-blue-light rounded-lg p-3">
+              <div class="text-navy font-serif text-2xl">312</div>
+              <div class="text-[10px] text-ink-muted uppercase tracking-wide">Chats atendidos</div>
+            </div>
+            <div class="bg-teal-light rounded-lg p-3">
+              <div class="text-navy font-serif text-2xl">48s</div>
+              <div class="text-[10px] text-ink-muted uppercase tracking-wide">Tiempo resp.</div>
+            </div>
+            <div class="bg-[#FAEEDA] rounded-lg p-3">
+              <div class="text-navy font-serif text-2xl">96%</div>
+              <div class="text-[10px] text-ink-muted uppercase tracking-wide">Satisfacción</div>
+            </div>
+          </div>
+          <div class="flex items-end gap-2 h-24">
+            <div class="flex-1 bg-blue/20 rounded-t" style="height: 55%"></div>
+            <div class="flex-1 bg-blue/40 rounded-t" style="height: 75%"></div>
+            <div class="flex-1 bg-blue/60 rounded-t" style="height: 45%"></div>
+            <div class="flex-1 bg-blue rounded-t" style="height: 90%"></div>
+            <div class="flex-1 bg-blue/50 rounded-t" style="height: 65%"></div>
+            <div class="flex-1 bg-teal rounded-t" style="height: 80%"></div>
+            <div class="flex-1 bg-blue/30 rounded-t" style="height: 40%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Asistente interno -->
+      <div class="absolute inset-0 transition-all duration-700" :class="slide === 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
+        <div class="bg-navy-deep rounded-2xl shadow-2xl h-full p-6 border border-white/10 flex flex-col">
+          <div class="flex items-center gap-2 mb-5">
+            <i data-lucide="sparkles" class="w-4 h-4 text-blue-bright"></i>
+            <div class="text-white/80 font-mono text-[11px] uppercase tracking-wide">Asistente interno</div>
+          </div>
+          <div class="bg-white/5 rounded-lg p-3 text-white/70 text-[13px] mb-3">"Genérame una cotización para 40 licencias, plan anual"</div>
+          <div class="bg-blue/20 border border-blue/30 rounded-lg p-3 text-white/85 text-[13px] mb-auto">Cotización generada ✓ — PDF listo en 8 segundos, con tus condiciones comerciales vigentes.</div>
+          <div class="flex gap-2 mt-4">
+            <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Políticas internas</span>
+            <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Documentos</span>
+            <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Cotizaciones</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
+        <button @click="slide = 0" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 0 ? 'bg-white w-5' : 'bg-white/30'"></button>
+        <button @click="slide = 1" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 1 ? 'bg-white w-5' : 'bg-white/30'"></button>
+        <button @click="slide = 2" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 2 ? 'bg-white w-5' : 'bg-white/30'"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════ SOLUCIONES ═════════════════════════════ -->
+<section class="bg-white border-y border-navy/10" id="soluciones">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <div class="flex items-center gap-3.5 font-mono text-[11px] font-medium text-blue tracking-[0.22em] uppercase mb-6">
+      <span class="w-7 h-px bg-blue"></span> Soluciones
+    </div>
+    <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-navy max-w-3xl mb-6" data-aos="fade-up">
+      Tres formas en las que la <em class="italic text-blue">tecnología trabaja para ti.</em>
+    </h2>
+    <p class="text-[15px] md:text-[17px] font-light max-w-xl mb-16" data-aos="fade-up" data-aos-delay="100">
+      Da clic en cada tarjeta para ver el detalle. Iremos agregando demos en video conforme estén listos.
     </p>
 
-    <div class="hero-cta-row">
-      <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20operaci%C3%B3n." class="btn-primary" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Escríbeme por WhatsApp
-      </a>
-      <a href="#servicios" class="btn-secondary">
-        Ver servicios
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </a>
-    </div>
-
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        Consultor
-        <strong>Fernando Herrador</strong>
-      </div>
-      <div class="hero-meta-item">
-        Sector
-        <strong>PyMEs de servicios, 10&ndash;200 empleados</strong>
-      </div>
-      <div class="hero-meta-item">
-        Operaciones
-        <strong>México, El Salvador &amp; EUA</strong>
-      </div>
-    </div>
+    <div id="soluciones-categorias" class="space-y-16"></div>
   </div>
 </section>
 
-<!-- ═════════════════════════════ PROMESA ═════════════════════════════ -->
-<section class="section promise">
-  <div class="section-label">01 · Cómo trabajo</div>
-  <h2 class="section-title">
-    Un experto en operaciones y calidad que entra, entiende tu sistema real,<br>
-    y entrega <em>estructuras que funcionan sin él presente.</em>
+<!-- ═════════════════════════════ PROCESO / CRONOGRAMA ═════════════════════════════ -->
+<section class="max-w-6xl mx-auto px-6 py-24 md:py-32" id="proceso">
+  <div class="flex items-center gap-3.5 font-mono text-[11px] font-medium text-blue tracking-[0.22em] uppercase mb-6">
+    <span class="w-7 h-px bg-blue"></span> Cómo trabajamos
+  </div>
+  <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-navy max-w-3xl mb-16" data-aos="fade-up">
+    Diez pasos, <em class="italic text-blue">sin sorpresas en el camino.</em>
   </h2>
-  <p class="section-desc">
-    Fulcro no es una agencia ni una firma grande. Es consultoría boutique con enfoque operativo &mdash; pensada para dueños y directores que saben que su negocio puede operar mejor de lo que opera hoy.
-  </p>
 
-  <div class="promise-grid reveal">
-    <div class="promise-item">
-      <div class="promise-num">/ 01</div>
-      <div class="promise-title">Diagnóstico primero</div>
-      <div class="promise-desc">Antes de proponer nada, entendemos el sistema real: los procesos, las métricas, los cuellos de botella. Sin auditorías intrusivas.</div>
+  <div class="grid lg:grid-cols-[1fr_340px] gap-14 items-start">
+    <div>
+      <div class="relative pl-10" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute left-[15px] top-2 bottom-2 w-px bg-navy/15"></div>
+
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">1</div>
+          <div class="text-navy font-medium mb-1">Llamada de 15 min</div>
+          <p class="text-[14px]">Definiremos en qué podemos ayudar.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">2</div>
+          <div class="text-navy font-medium mb-1">Formulario híper-personalizado</div>
+          <p class="text-[14px]">Llenas un formulario breve con preguntas clave sobre tu operación.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">3</div>
+          <div class="text-navy font-medium mb-1">Videollamada de 30 min</div>
+          <p class="text-[14px]">Te presentamos cómo lo haremos.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">4</div>
+          <div class="text-navy font-medium mb-1">Propuesta y cotización</div>
+          <p class="text-[14px]">Te la enviamos por correo, con alcance y precio claros.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center font-mono text-[12px]">5</div>
+          <div class="text-navy font-medium mb-1">Aceptación y anticipo</div>
+          <p class="text-[14px]">Si la aceptas, cubres el 50% de anticipo y el resto contra-entrega. <span class="text-ink-muted">*</span></p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">6</div>
+          <div class="text-navy font-medium mb-1">Videollamada de alineación</div>
+          <p class="text-[14px]">30 min para alinear cómo ejecutaremos el proyecto.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">7</div>
+          <div class="text-navy font-medium mb-1">Primera entrega async</div>
+          <p class="text-[14px]">Se deja habilitado el piloto para que nos des feedback.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">8</div>
+          <div class="text-navy font-medium mb-1">Primera ronda de ajustes</div>
+          <p class="text-[14px]">Se aplican los cambios y se publica la segunda entrega async.</p>
+        </div>
+        <div class="relative pb-9">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">9</div>
+          <div class="text-navy font-medium mb-1">Segundo piloto</div>
+          <p class="text-[14px]">Queda habilitado para un segundo round de feedback y ajustes.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center font-mono text-[12px]">10</div>
+          <div class="text-navy font-medium mb-1">Entrega final</div>
+          <p class="text-[14px]">Entrega final del proyecto y liquidación del pago restante.</p>
+        </div>
+      </div>
+      <p class="text-[12px] text-ink-muted mt-8"><span class="text-ink-muted">*</span> Confirma este punto con Fernando — puede variar según el proyecto.</p>
     </div>
-    <div class="promise-item">
-      <div class="promise-num">/ 02</div>
-      <div class="promise-title">Entregables concretos</div>
-      <div class="promise-desc">SOPs documentados, dashboards funcionales, scorecards listos para usar. Nada queda en PowerPoint.</div>
-    </div>
-    <div class="promise-item">
-      <div class="promise-num">/ 03</div>
-      <div class="promise-title">Autonomía, no dependencia</div>
-      <div class="promise-desc">El éxito es que tu equipo opere sin consultor externo. La estructura queda instalada en tu gente.</div>
+
+    <!-- Diagrama: qué pasa después de la entrega -->
+    <div class="lg:sticky lg:top-28" data-aos="fade-up" data-aos-delay="200">
+      <div class="rounded-2xl border border-navy/10 bg-bg p-6">
+        <div class="font-mono text-[10.5px] text-teal uppercase tracking-wide mb-5 flex items-center gap-2">
+          <i data-lucide="git-branch" class="w-3.5 h-3.5"></i> Después de la entrega
+        </div>
+
+        <div class="flex flex-col items-stretch">
+          <div class="rounded-lg bg-navy text-white text-center py-3 px-3 text-[13px] font-medium">
+            10 · Entrega final
+          </div>
+          <div class="w-px h-6 bg-navy/20 mx-auto"></div>
+          <div class="rounded-lg bg-teal text-white text-center py-3.5 px-3">
+            <div class="text-[13px] font-medium">Handover completo</div>
+            <div class="text-[11px] font-light opacity-85 mt-0.5">Documentación + traspaso de conocimiento a tu equipo</div>
+          </div>
+          <div class="w-px h-6 bg-navy/20 mx-auto"></div>
+          <div class="font-mono text-[10px] text-ink-muted uppercase tracking-wide text-center mb-3">Retainer opcional</div>
+          <div class="grid grid-cols-1 gap-2.5">
+            <div class="rounded-lg border border-navy/15 bg-white p-3 flex items-center gap-2.5">
+              <i data-lucide="shield-check" class="w-4 h-4 text-blue shrink-0"></i>
+              <div class="text-[12.5px] text-navy">Mantenimiento preventivo</div>
+            </div>
+            <div class="rounded-lg border border-navy/15 bg-white p-3 flex items-center gap-2.5">
+              <i data-lucide="headset" class="w-4 h-4 text-blue shrink-0"></i>
+              <div class="text-[12.5px] text-navy">Acompañamiento bajo demanda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-[12px] text-ink-muted mt-4">El retainer es opcional y se cotiza aparte — no es obligatorio para recibir el handover.</p>
     </div>
   </div>
 </section>
 
-<!-- ═════════════════════════════ SERVICIOS ═════════════════════════════ -->
-<section class="section services" id="servicios">
-  <div class="section-label">02 · Servicios</div>
-  <h2 class="section-title">
-    Cinco formas de trabajar juntos, <em>desde la primera conversación</em> hasta el acompañamiento continuo.
-  </h2>
-  <p class="section-desc">
-    Cada servicio tiene un rol claro en el recorrido: entrada, evaluación, construcción, medición y continuidad. Los precios se cotizan según el alcance &mdash; escríbeme para platicar tu caso.
-  </p>
-
-  <div class="services-list reveal">
-    <!-- Diagnóstico Operacional -->
-    <div class="service">
-      <div class="service-num">/ 01</div>
-      <div class="service-body">
-        <div class="service-name">Diagnóstico Operacional</div>
-        <div class="service-desc">Mapeo completo del estado actual de tu operación: entrevistas con áreas clave, identificación de cuellos de botella y priorización de oportunidades. El entregable es un plan claro con las cinco mejoras de mayor impacto.</div>
-        <div class="service-tags">
-          <span class="service-tag entry">Evaluación</span>
-          <span class="service-tag entry">2&ndash;3 semanas</span>
-        </div>
-      </div>
-      <div class="service-badge entry-badge">Empieza aquí</div>
+<!-- ═════════════════════════════ QUIÉN OPERA FULCRO ═════════════════════════════ -->
+<section class="bg-white border-y border-navy/10" id="sobre-mi">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <div class="flex items-center gap-3.5 font-mono text-[11px] font-medium text-blue tracking-[0.22em] uppercase mb-6">
+      <span class="w-7 h-px bg-blue"></span> Quién opera Fulcro
     </div>
 
-    <!-- SOPs -->
-    <div class="service">
-      <div class="service-num">/ 02</div>
-      <div class="service-body">
-        <div class="service-name">Diseño e Implementación de SOPs</div>
-        <div class="service-desc">Documentación y estructura de los procesos críticos de tu operación. Levantamos, validamos y capacitamos al equipo &mdash; para que el conocimiento deje de vivir en la cabeza de personas clave y pase a ser sistema.</div>
-        <div class="service-tags">
-          <span class="service-tag">Construcción</span>
-          <span class="service-tag">4&ndash;6 semanas</span>
+    <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-14 items-start">
+      <div data-aos="fade-up" class="min-w-0">
+        <!-- Foto profesional: coloca el archivo en assets/fernando-herrador.jpg -->
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden border border-navy/10 mb-5 bg-gradient-to-br from-navy to-blue">
+          <div class="absolute inset-0 flex items-center justify-center text-center text-white/50">
+            <div>
+              <i data-lucide="user-round" class="w-12 h-12 mx-auto mb-2"></i>
+              <div class="font-mono text-[11px] uppercase tracking-wide">assets/fernando-herrador.jpg</div>
+            </div>
+          </div>
+          <img src="assets/fernando-herrador.jpg" alt="Fernando Herrador"
+               class="relative w-full h-full object-cover"
+               onerror="this.style.visibility='hidden';">
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://linkedin.com/in/fernandoherrador" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue text-[13px] hover:text-blue-bright transition-colors">
+            <i data-lucide="linkedin" class="w-4 h-4"></i> linkedin.com/in/fernandoherrador
+          </a>
         </div>
       </div>
-      <div class="service-badge">Core</div>
-    </div>
 
-    <!-- QA -->
-    <div class="service">
-      <div class="service-num">/ 03</div>
-      <div class="service-body">
-        <div class="service-name">Sistema de QA &amp; Desempeño</div>
-        <div class="service-desc">Para equipos de atención, ventas o soporte: scorecard de evaluación, métricas de CX, tablero de seguimiento en Looker Studio y guía de calibración. Visibilidad real de cómo opera tu equipo día a día.</div>
-        <div class="service-tags">
-          <span class="service-tag">Medición</span>
-          <span class="service-tag">4&ndash;8 semanas</span>
-        </div>
-      </div>
-      <div class="service-badge">Core</div>
-    </div>
+      <div data-aos="fade-up" data-aos-delay="100" class="min-w-0">
+        <h3 class="font-serif text-[clamp(24px,3vw,32px)] text-navy mb-2">Fernando Herrador</h3>
+        <p class="font-mono text-[12px] text-blue tracking-wide uppercase mb-6">CX, AI &amp; Automation Consultant</p>
 
-    <!-- Recurrente -->
-    <div class="service">
-      <div class="service-num">/ 04</div>
-      <div class="service-body">
-        <div class="service-name">Consultoría Recurrente</div>
-        <div class="service-desc">Acompañamiento continuo para dueños y directores que quieren un operador senior cerca del negocio. Sesiones regulares, revisión de métricas, apoyo en decisiones operativas y disponibilidad por WhatsApp.</div>
-        <div class="service-tags">
-          <span class="service-tag recurring">Mensual</span>
-          <span class="service-tag recurring">Renovable</span>
-        </div>
-      </div>
-      <div class="service-badge">Continuidad</div>
-    </div>
+        <p class="text-[15px] leading-relaxed mb-4">
+          Durante más de 8 años lideré operaciones de experiencia de cliente en empresas de servicio, donde la eficiencia, la calidad y la satisfacción del cliente eran indicadores críticos del negocio. Hoy ayudo a empresas a aplicar IA y automatización para resolver esos mismos retos con soluciones prácticas que operan en producción y generan resultados medibles.
+        </p>
 
-    <!-- Talleres Prácticos -->
-    <div class="service">
-      <div class="service-num">/ 05</div>
-      <div class="service-body">
-        <div class="service-name">Talleres Prácticos</div>
-        <div class="service-desc">Capacitación para equipos operativos, líderes y directores. Tres líneas temáticas: liderazgo operativo y técnicas de comunicación, resolución de problemas, y uso avanzado de IA para el negocio con Claude. Formato presencial o remoto, adaptado a tu equipo.</div>
-        <div class="service-tags">
-          <span class="service-tag">Liderazgo &amp; comunicación</span>
-          <span class="service-tag">Resolución de problemas</span>
-          <span class="service-tag">IA aplicada con Claude</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-navy/10 border border-navy/15 rounded-xl overflow-hidden my-8">
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">500+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Headcount operado</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">8+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Años en operaciones</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">BPO</div><div class="font-mono text-[10px] text-ink-muted uppercase">Fintech &amp; servicios</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">+45%</div><div class="font-mono text-[10px] text-ink-muted uppercase">Facturación en 3 meses</div></div>
+        </div>
+
+        <!-- Logo universidad -->
+        <div class="flex items-center gap-3 mb-8 p-4 border border-navy/10 rounded-lg bg-bg">
+          <div class="w-10 h-10 rounded bg-navy/10 flex items-center justify-center shrink-0">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-navy/50"></i>
+          </div>
+          <div class="text-[13px]"><span class="text-ink-muted font-mono text-[10px] uppercase tracking-wide block">Logo Universidad Anáhuac Mayab aquí</span>Lic. Finanzas y Contabilidad</div>
+        </div>
+
+        <!-- Diplomas y certificaciones — carrusel horizontal -->
+        <div class="mb-8 -mx-1 min-w-0">
+          <div class="font-mono text-[10.5px] text-ink-muted uppercase tracking-wide mb-3 px-1">Formación &amp; certificaciones (17)</div>
+          <div class="relative min-w-0 overflow-hidden" style="mask-image: linear-gradient(90deg, transparent, black 24px, black calc(100% - 24px), transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 24px, black calc(100% - 24px), transparent);">
+            <div id="diplomas-track" class="flex gap-3 w-max"></div>
+          </div>
+        </div>
+
+        <!-- Video intro + credenciales -->
+        <div class="flex flex-wrap gap-3">
+          <div class="flex-1 min-w-[220px] aspect-video rounded-lg bg-navy-deep border border-navy/10 flex items-center justify-center">
+            <div class="text-center text-white/40">
+              <i data-lucide="play-circle" class="w-8 h-8 mx-auto mb-1"></i>
+              <div class="font-mono text-[10px] uppercase">Video de intro aquí</div>
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 px-4 py-3 border border-navy/15 rounded-lg text-[13px] text-ink-soft hover:border-navy/30 transition-colors self-start">
+            <i data-lucide="file-check-2" class="w-4 h-4"></i> Verificar título y cédula
+          </a>
         </div>
       </div>
-      <div class="service-badge">Capacitación</div>
     </div>
   </div>
 </section>
 
-<!-- ═════════════════════════════ QUIÉN SOY ═════════════════════════════ -->
-<section class="about" id="sobre-mi">
-  <div class="about-inner">
-    <div class="reveal">
-      <div class="section-label">03 · Quién opera Fulcro</div>
-      <div class="about-quote">
-        Ayudo a empresas de servicios a convertir sus operaciones en sistemas <em>documentados, medibles y rentables.</em>
-      </div>
-      <div class="about-signer">
-        <strong>Fernando Herrador</strong>
-        Operations &amp; Quality Consultant<br>
-        Lic. Finanzas y Contabilidad &middot; Universidad Anáhuac Mayab<br>
-        Mérida, Yucatán &middot; México
-      </div>
-    </div>
+<!-- ═════════════════════════════ CASOS DE USO ═════════════════════════════ -->
+<section class="relative overflow-hidden bg-navy-deep py-24 md:py-32 px-6">
+  <!-- Gradient mesh de fondo, estilo Stripe -->
+  <div class="absolute inset-0 pointer-events-none opacity-70" style="background:
+    radial-gradient(ellipse 700px 500px at 15% 20%, rgba(55,138,221,0.25), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 15%, rgba(29,158,117,0.20), transparent 60%),
+    radial-gradient(ellipse 800px 600px at 50% 100%, rgba(24,95,165,0.25), transparent 60%);"></div>
+  <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size: 44px 44px;"></div>
 
-    <div class="about-stats reveal">
-      <div class="stat">
-        <div class="stat-value">500<em>+</em></div>
-        <div class="stat-label">Headcount<br>operado</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">8<em>+</em></div>
-        <div class="stat-label">Años en<br>operaciones y calidad</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">BPO</div>
-        <div class="stat-label">Fintech<br>&amp; servicios</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">+45<em>%</em></div>
-        <div class="stat-label">Capacidad de<br>facturación en 3 meses</div>
-      </div>
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="flex items-center gap-3.5 font-mono text-[11px] font-medium text-blue-bright tracking-[0.22em] uppercase mb-6">
+      <span class="w-7 h-px bg-blue-bright"></span> Casos de uso
     </div>
+    <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-white max-w-3xl mb-3" data-aos="fade-up">
+      Así se ve <em class="italic text-blue-bright">en la práctica.</em>
+    </h2>
+    <p class="text-[14px] text-white/50 mb-16" data-aos="fade-up" data-aos-delay="100">Escenarios de demostración — se reemplazarán por casos reales conforme se sumen clientes.</p>
+
+    <div id="casos-grid" class="grid md:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════ FAQ ═════════════════════════════ -->
+<section class="bg-white border-y border-navy/10" id="faq">
+  <div class="max-w-3xl mx-auto px-6 py-24 md:py-32">
+    <div class="flex items-center gap-3.5 font-mono text-[11px] font-medium text-blue tracking-[0.22em] uppercase mb-6">
+      <span class="w-7 h-px bg-blue"></span> Preguntas frecuentes
+    </div>
+    <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,40px)] leading-tight tracking-tight text-navy mb-14" data-aos="fade-up">
+      Lo que más nos <em class="italic text-blue">preguntan.</em>
+    </h2>
+
+    <div id="faq-list" class="divide-y divide-navy/10 border-t border-b border-navy/10"></div>
   </div>
 </section>
 
 <!-- ═════════════════════════════ CTA FINAL ═════════════════════════════ -->
-<section class="cta-final">
-  <div class="cta-inner">
-    <div class="cta-label">Siguiente paso</div>
-    <h2 class="cta-title">
-      Una conversación de 20 minutos <em>puede ser el punto de apoyo</em> que tu operación necesita.
+<section class="bg-navy text-white py-24 md:py-32 px-6 text-center relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 20% 30%, rgba(55,138,221,0.12) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(29,158,117,0.08) 0%, transparent 50%);"></div>
+  <div class="relative z-10 max-w-2xl mx-auto" data-aos="fade-up">
+    <div class="inline-flex items-center gap-2.5 font-mono text-[11px] font-medium text-white/55 tracking-[0.22em] uppercase mb-7">
+      <span class="w-6 h-px bg-white/35"></span> Siguiente paso <span class="w-6 h-px bg-white/35"></span>
+    </div>
+    <h2 class="font-serif font-normal text-[clamp(30px,5vw,48px)] leading-tight tracking-tight mb-5">
+      Una llamada de 15 minutos <em class="italic text-blue-bright">puede ahorrarte cientos de horas</em> al año.
     </h2>
-    <p class="cta-desc">
-      Sin formulario, sin agenda complicada. Escríbeme por WhatsApp y platicamos sobre tu operación &mdash; si coincide con lo que necesitas, avanzamos. Si no, no pasa nada.
+    <p class="text-[15px] font-light text-white/70 mb-10 max-w-lg mx-auto">
+      Escríbeme por WhatsApp y platicamos sobre tu negocio — si coincide con lo que necesitas, avanzamos. Si no, no pasa nada.
     </p>
-    <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20operaci%C3%B3n." class="btn-primary" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20negocio." target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2.5 px-7 py-4 bg-wa-green hover:bg-wa-green-dk rounded-lg text-white text-[15px] font-medium transition-all hover:-translate-y-0.5 shadow-[0_8px_24px_rgba(37,211,102,0.25)]">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Escríbeme por WhatsApp
     </a>
   </div>
 </section>
 
 <!-- ═════════════════════════════ FOOTER ═════════════════════════════ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
+<footer class="bg-navy-deep text-white/55 pt-14 pb-7 px-6 text-[13px]">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid sm:grid-cols-2 gap-10 pb-9 border-b border-white/10 mb-6">
       <div>
-        <div class="footer-brand">
+        <div class="flex items-center gap-3 mb-3">
           <svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="44" height="44" rx="9" fill="#0C2340"/>
             <polygon points="22,28 17,34 27,34" fill="#378ADD"/>
@@ -1098,48 +481,193 @@
             <circle cx="12" cy="31" r="2" fill="rgba(255,255,255,0.35)"/>
           </svg>
           <div>
-            <div class="footer-brand-word">Fulcro</div>
-            <div class="footer-brand-tag">consulting</div>
+            <div class="text-white text-xl font-medium tracking-tight leading-none">Fulcro</div>
+            <div class="text-white/45 text-[9px] tracking-[0.2em] uppercase mt-0.5">consulting</div>
           </div>
         </div>
-        <div class="footer-tagline">Operaciones potenciadas.</div>
+        <p class="font-serif italic text-white/60">Fernando Herrador — CX, AI &amp; Automation Consultant</p>
       </div>
 
-      <div class="footer-contact">
-        <a href="https://wa.me/529991214977" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +52 999 121 4977
+      <div class="font-mono text-[12px] leading-loose">
+        <a href="https://wa.me/529991214977" target="_blank" rel="noopener" class="flex items-center gap-2 text-white/70 hover:text-blue-bright transition-colors">
+          <i data-lucide="phone" class="w-3 h-3 opacity-50"></i> +52 999 121 4977
         </a>
-        <a href="mailto:fherrador.95@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          fherrador.95@gmail.com
+        <a href="mailto:fherrador.95@gmail.com" class="flex items-center gap-2 text-white/70 hover:text-blue-bright transition-colors">
+          <i data-lucide="mail" class="w-3 h-3 opacity-50"></i> fherrador.95@gmail.com
         </a>
-        <a href="https://linkedin.com/in/fernandoherrador" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          linkedin.com/in/fernandoherrador
+        <a href="https://linkedin.com/in/fernandoherrador" target="_blank" rel="noopener" class="flex items-center gap-2 text-white/70 hover:text-blue-bright transition-colors">
+          <i data-lucide="linkedin" class="w-3 h-3 opacity-50"></i> linkedin.com/in/fernandoherrador
         </a>
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="flex flex-wrap justify-between gap-3 font-mono text-[11px] text-white/35">
       <div>&copy; 2026 Fulcro Consulting · Fernando Herrador</div>
-      <div>Mérida, MX &middot; San Salvador, SV &middot; EUA</div>
+      <div class="flex flex-wrap gap-x-5 gap-y-1">
+        <a href="terminos.html" class="hover:text-white/60 transition-colors">T&amp;C</a>
+        <a href="privacidad.html" class="hover:text-white/60 transition-colors">Política de Privacidad</a>
+        <a href="eliminacion-datos.html" class="hover:text-white/60 transition-colors">Eliminación de datos</a>
+      </div>
+      <div>Mérida, MX · San Salvador, SV · EUA</div>
     </div>
   </div>
 </footer>
 
-<script>
-  // Reveal on scroll — simple IntersectionObserver
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20negocio." target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-wa-green hover:bg-wa-green-dk shadow-xl flex items-center justify-center transition-all hover:scale-105"
+   aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" class="w-7 h-7" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+<!-- ═════════════════════════════ SCRIPTS ═════════════════════════════ -->
+<script src="data.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<script>
+  // ---- Render Soluciones, agrupadas por categoría ----
+  const catContainer = document.getElementById('soluciones-categorias');
+  const catColors = {
+    Experiencia: { chip: 'text-blue bg-blue-light', ring: 'hover:border-blue/30' },
+    Productividad: { chip: 'text-[#4338CA] bg-[#EEF0FD]', ring: 'hover:border-[#4338CA]/30' },
+    Analítica: { chip: 'text-teal bg-teal-light', ring: 'hover:border-teal/30' }
+  };
+  let catDelay = 0;
+  FULCRO_CATEGORIAS.forEach((cat) => {
+    const items = FULCRO_SOLUCIONES.filter(s => s.categoria === cat.nombre);
+    if (!items.length) return;
+    const colors = catColors[cat.nombre] || catColors.Experiencia;
+
+    const block = document.createElement('div');
+    block.innerHTML = `
+      <div class="flex items-baseline gap-3 mb-1.5" data-aos="fade-up">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-mono uppercase tracking-wide ${colors.chip}">${cat.nombre}</span>
+        <span class="text-[13px] text-ink-muted">${cat.desc}</span>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"></div>
+    `;
+    const grid = block.querySelector('div.grid');
+
+    items.forEach((s) => {
+      const card = document.createElement('div');
+      card.setAttribute('x-data', '{ open: false }');
+      card.setAttribute('data-aos', 'fade-up');
+      card.setAttribute('data-aos-delay', String(catDelay % 400));
+      catDelay += 80;
+      card.className = `bg-white border border-navy/10 rounded-xl p-6 transition-all hover:shadow-lg ${colors.ring}`;
+      card.innerHTML = `
+        <div class="w-10 h-10 rounded-lg ${colors.chip} flex items-center justify-center mb-4">
+          <i data-lucide="${s.icono}" class="w-[18px] h-[18px]"></i>
+        </div>
+        <h3 class="font-serif text-[17px] text-navy mb-2 leading-snug">${s.titulo}</h3>
+        <p class="text-[13.5px] mb-3 leading-relaxed">${s.resumen}</p>
+        ${s.bullets.length ? `
+        <button @click="open = !open" class="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-blue hover:text-blue-bright transition-colors">
+          <span x-text="open ? 'Ver menos' : 'Ver detalle'"></span>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+        </button>
+        <div x-show="open" x-collapse class="mt-3 pt-3 border-t border-navy/10">
+          <ul class="space-y-1.5 text-[13px] ${s.demoUrl ? 'mb-4' : ''}">
+            ${s.bullets.map(b => `<li class="flex gap-2"><span class="text-blue mt-1">·</span><span>${b}</span></li>`).join('')}
+          </ul>
+          ${s.demoUrl ? `<a href="${s.demoUrl}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-teal"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver demo</a>` : ''}
+        </div>` : (s.demoUrl ? `
+        <div class="pt-1">
+          <a href="${s.demoUrl}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-teal"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver demo</a>
+        </div>` : '')}
+      `;
+      grid.appendChild(card);
+    });
+
+    catContainer.appendChild(block);
+  });
+
+  // ---- Render Casos de Uso — tarjetas glass con flujo animado ----
+  const casosGrid = document.getElementById('casos-grid');
+  FULCRO_CASOS_USO.forEach((c, i) => {
+    const card = document.createElement('div');
+    card.setAttribute('data-aos', 'zoom-in');
+    card.setAttribute('data-aos-delay', i * 120);
+    card.className = 'group relative rounded-2xl p-[1px] transition-transform duration-300 hover:-translate-y-1.5';
+    card.style.background = 'linear-gradient(135deg, rgba(55,138,221,0.5), rgba(29,158,117,0.35), rgba(255,255,255,0.08))';
+    card.innerHTML = `
+      <div class="relative h-full rounded-2xl bg-navy/90 backdrop-blur-xl p-7 overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-blue-bright/20 blur-2xl group-hover:bg-blue-bright/30 transition-all duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center mb-5 group-hover:bg-white/15 transition-colors">
+            <i data-lucide="${c.icono}" class="w-5 h-5 text-blue-bright"></i>
+          </div>
+          <div class="font-mono text-[10.5px] text-blue-bright uppercase tracking-wide mb-4">${c.industria}</div>
+
+          <div class="space-y-0 mb-5">
+            ${c.pasos.map((p, idx) => `
+              <div class="flex items-start gap-3">
+                <div class="flex flex-col items-center">
+                  <div class="w-1.5 h-1.5 rounded-full ${idx === 0 ? 'bg-blue-bright' : 'bg-white/30'} mt-1.5"></div>
+                  ${idx < c.pasos.length - 1 ? '<div class="w-px h-8 bg-white/15"></div>' : ''}
+                </div>
+                <div class="text-[13px] text-white/75 pb-2 leading-snug">${p}</div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="flex items-end justify-between pt-4 border-t border-white/10">
+            <div class="text-[12.5px] text-white/60 leading-snug max-w-[65%]">${c.resultado}</div>
+            <div class="text-right shrink-0">
+              <div class="font-serif text-2xl text-white">${c.metrica}</div>
+              <div class="font-mono text-[9px] text-white/40 uppercase tracking-wide max-w-[90px] leading-tight">${c.metricaLabel}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    casosGrid.appendChild(card);
+  });
+
+  // ---- Render Diplomas (carrusel infinito) ----
+  const diplomasTrack = document.getElementById('diplomas-track');
+  function diplomaCard(d) {
+    const logo = d.fuenteLogo
+      ? `<img src="https://cdn.simpleicons.org/${d.fuenteLogo}/185FA5" alt="" class="w-4 h-4 opacity-70" loading="lazy">`
+      : `<i data-lucide="linkedin" class="w-4 h-4 text-blue/70"></i>`;
+    return `
+      <div class="shrink-0 w-[220px] rounded-lg border border-navy/10 bg-white p-4 flex flex-col gap-2.5">
+        <div class="flex items-center gap-2">${logo}<span class="font-mono text-[9.5px] text-ink-muted uppercase tracking-wide truncate">${d.institucion}</span></div>
+        <div class="text-[12.5px] text-navy font-medium leading-snug line-clamp-3">${d.titulo}</div>
+        <div class="font-mono text-[9.5px] text-ink-muted/70 mt-auto">${d.fecha}</div>
+      </div>`;
+  }
+  // Se duplica el arreglo para lograr el loop continuo del carrusel
+  const diplomasHtml = FULCRO_DIPLOMAS.map(diplomaCard).join('') + FULCRO_DIPLOMAS.map(diplomaCard).join('');
+  diplomasTrack.innerHTML = diplomasHtml;
+  diplomasTrack.classList.add('diplomas-marquee');
+
+  // ---- Render FAQ ----
+  const faqList = document.getElementById('faq-list');
+  FULCRO_FAQ.forEach((f, i) => {
+    const item = document.createElement('div');
+    item.setAttribute('x-data', '{ open: false }');
+    item.className = 'py-5';
+    item.innerHTML = `
+      <button @click="open = !open" class="flex items-center justify-between w-full text-left gap-4">
+        <span class="text-navy font-medium text-[15px]">${f.pregunta}</span>
+        <i data-lucide="plus" class="w-4 h-4 text-blue shrink-0 transition-transform" :class="open ? 'rotate-45' : ''"></i>
+      </button>
+      <div x-show="open" x-collapse class="text-[14px] mt-3 pr-8">${f.respuesta}</div>
+    `;
+    faqList.appendChild(item);
+  });
+
+  // ---- Init ----
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({ duration: 700, once: true, offset: 40 });
+    if (window.lucide) lucide.createIcons();
+  });
+  // Lucide + Alpine cargan con defer/async — reintenta crear íconos tras montar tarjetas dinámicas
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
 </script>
 
 </body>

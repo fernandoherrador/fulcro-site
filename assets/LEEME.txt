@@ -1,0 +1,7 @@
+Coloca aquí tu foto profesional con el nombre exacto:
+
+  fernando-herrador.jpg
+
+El sitio ya la referencia en la sección "Quién opera Fulcro" — en cuanto
+el archivo exista en esta carpeta, se mostrará automáticamente (ya no
+hace falta tocar el HTML).

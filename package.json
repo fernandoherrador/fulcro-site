@@ -1,0 +1,26 @@
+{
+  "name": "fulcro-site",
+  "version": "1.0.0",
+  "description": "> Landing page de Fulcro Consulting · Fulcro Consulting's landing page >  > **Flujos de trabajo que funcionan. · Workflows that work.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandoherrador/fulcro-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandoherrador/fulcro-site/issues"
+  },
+  "homepage": "https://github.com/fernandoherrador/fulcro-site#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "playwright": "^1.62.0",
+    "puppeteer": "^25.3.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

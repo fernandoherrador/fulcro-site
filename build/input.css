@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-navy: #0C2340;
+  --color-navy-deep: #071629;
+  --color-blue: #185FA5;
+  --color-blue-bright: #378ADD;
+  --color-blue-muted: #5A8AB0;
+  --color-ice: #B5D4F4;
+  --color-blue-light: #E6F1FB;
+  --color-teal: #1D9E75;
+  --color-teal-light: #E1F5EE;
+  --color-offwhite: #F5F5F0;
+  --color-bg: #fafaf8;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #4a4a4a;
+  --color-ink-muted: #888780;
+  --color-wa-green: #25D366;
+  --color-wa-green-dk: #1DA851;
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Carrusel infinito de diplomas — se pausa al pasar el mouse */
+@keyframes diplomas-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.diplomas-marquee {
+  animation: diplomas-scroll 42s linear infinite;
+}
+.diplomas-marquee:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .diplomas-marquee { animation: none; }
+}

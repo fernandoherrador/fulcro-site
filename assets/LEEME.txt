@@ -5,3 +5,11 @@ Coloca aquí tu foto profesional con el nombre exacto:
 El sitio ya la referencia en la sección "Quién opera Fulcro" — en cuanto
 el archivo exista en esta carpeta, se mostrará automáticamente (ya no
 hace falta tocar el HTML).
+
+Logo de la Universidad Anáhuac Mayab, con el nombre exacto:
+
+  anahuac-mayab.png
+
+Ideal: PNG con fondo transparente (o recorte cuadrado), mínimo 200x200px.
+El sitio ya lo referencia en la misma sección — en cuanto el archivo
+exista aquí, se muestra automáticamente.

@@ -377,12 +377,15 @@
           <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">+45%</div><div class="font-mono text-[10px] text-ink-muted uppercase">Facturación en 3 meses</div></div>
         </div>
 
-        <!-- Logo universidad -->
+        <!-- Logo universidad: coloca el archivo en assets/anahuac-mayab.png -->
         <div class="flex items-center gap-3 mb-8 p-4 border border-navy/10 rounded-lg bg-bg">
-          <div class="w-10 h-10 rounded bg-navy/10 flex items-center justify-center shrink-0">
+          <div class="relative w-10 h-10 rounded bg-navy/10 flex items-center justify-center shrink-0 overflow-hidden">
             <i data-lucide="graduation-cap" class="w-5 h-5 text-navy/50"></i>
+            <img src="assets/anahuac-mayab.png" alt="Universidad Anáhuac Mayab"
+                 class="absolute inset-0 w-full h-full object-contain bg-bg"
+                 onerror="this.style.visibility='hidden';">
           </div>
-          <div class="text-[13px]"><span class="text-ink-muted font-mono text-[10px] uppercase tracking-wide block">Logo Universidad Anáhuac Mayab aquí</span>Lic. Finanzas y Contabilidad</div>
+          <div class="text-[13px]"><span class="text-ink-muted font-mono text-[10px] uppercase tracking-wide block">Universidad Anáhuac Mayab</span>Lic. Finanzas y Contabilidad</div>
         </div>
 
         <!-- Diplomas y certificaciones — carrusel horizontal -->

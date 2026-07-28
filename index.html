@@ -401,11 +401,10 @@
 
         <!-- Video intro + credenciales -->
         <div class="flex flex-wrap gap-3">
-          <div class="flex-1 min-w-[220px] aspect-video rounded-lg bg-navy-deep border border-navy/10 flex items-center justify-center">
-            <div class="text-center text-white/40">
-              <i data-lucide="play-circle" class="w-8 h-8 mx-auto mb-1"></i>
-              <div class="font-mono text-[10px] uppercase">Video de intro aquí</div>
-            </div>
+          <div class="flex-1 min-w-[220px] aspect-video rounded-lg border border-navy/10 relative overflow-hidden">
+            <iframe src="https://www.loom.com/embed/e3095e6ad4ee45b9b61411907ae37b64?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+              class="absolute inset-0 w-full h-full" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
           </div>
           <a href="#" class="inline-flex items-center gap-2 px-4 py-3 border border-navy/15 rounded-lg text-[13px] text-ink-soft hover:border-navy/30 transition-colors self-start">
             <i data-lucide="file-check-2" class="w-4 h-4"></i> Verificar título y cédula

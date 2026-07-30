@@ -315,10 +315,13 @@
 }
 .fx-front-visual::-webkit-scrollbar { display: none; }
 @media (max-width: 760px) {
-  .fx-front-visual { flex: 0 0 auto; width: 100%; border-right: none; border-bottom: 1px solid rgba(12,35,64,0.08); padding: 22px 16px; overflow: visible; }
+  .fx-front-visual { flex: 0 0 auto; width: 100%; border-right: none; border-top: 1px solid rgba(12,35,64,0.08); padding: 22px 16px; overflow: visible; order: 2; }
 }
 
 .fx-front-text { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 24px 26px; min-width: 0; gap: 10px; }
+@media (max-width: 760px) {
+  .fx-front-text { order: 1; }
+}
 
 .fx-front-head { display: flex; flex-direction: row; align-items: center; gap: 9px; }
 .fx-front-head i { color: var(--color-blue); flex-shrink: 0; }

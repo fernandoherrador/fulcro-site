@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0C2340">
 <title>Fulcro Consulting — Experiencia de cliente y productividad con IA</title>
-<meta name="description" content="Mejoramos la experiencia de tus clientes con tecnología y le devolvemos tiempo a tu negocio con automatización inteligente. Fernando Herrador — CX, AI &amp; Automation Consultant.">
+<meta name="description" content="Agentes de IA para WhatsApp e Instagram que responden 24/7, agendan y venden por ti. Automatización inteligente para PyMEs de servicios — Fernando Herrador, CX, AI &amp; Automation Consultant.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Fulcro Consulting — Experiencia de cliente y productividad con IA">
-<meta property="og:description" content="Mejoramos la experiencia de tus clientes con tecnología. Les devolvemos tiempo a tu negocio, a tu equipo y a ti con automatización inteligente.">
+<meta property="og:title" content="Fulcro Consulting — Agente de IA para WhatsApp y automatización con IA">
+<meta property="og:description" content="Ahorra tiempo, responde 24/7 e impulsa tus ventas con un agente de IA para WhatsApp e Instagram. Automatización inteligente para tu negocio.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fulcroconsulting.org">
 <meta property="og:locale" content="es_MX">
 <meta property="og:image" content="https://fulcroconsulting.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Fulcro Consulting — Experiencia de cliente impulsada por IA">
+<meta property="og:image:alt" content="Fulcro Consulting — Agente de IA de WhatsApp respondiendo a un cliente automáticamente">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fulcro Consulting — Experiencia de cliente y productividad con IA">
-<meta name="twitter:description" content="Mejoramos la experiencia de tus clientes con tecnología. Automatización inteligente para PyMEs de servicios.">
+<meta name="twitter:title" content="Fulcro Consulting — Agente de IA para WhatsApp y automatización con IA">
+<meta name="twitter:description" content="Ahorra tiempo, responde 24/7 e impulsa tus ventas con un agente de IA para WhatsApp e Instagram.">
 <meta name="twitter:image" content="https://fulcroconsulting.org/assets/og-image.png">
 
 <link rel="canonical" href="https://fulcroconsulting.org">
@@ -30,6 +30,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/fulcro-updates.css">
 
 <!-- ANALÍTICA -->
 <meta name="google-site-verification" content="zyY07t58WVVM34dVh1POWMvAW527iRD4C2uV7809MMQ">
@@ -102,7 +103,7 @@
       </h1>
 
       <p class="text-[clamp(16px,2vw,19px)] font-light text-white/75 max-w-xl leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="200">
-        Les devolvemos tiempo a tu negocio, a tu equipo y a ti con automatización inteligente. Menos tareas repetitivas, más conversaciones que sí importan.
+        Ahorra tiempo, responde 24/7 e impulsa tus ventas cuando tu equipo humano está saturado, enfocado en otra tarea o descansando.
       </p>
 
       <div class="flex flex-wrap gap-3.5" data-aos="fade-up" data-aos-delay="300">
@@ -132,86 +133,98 @@
       </div>
     </div>
 
-    <!-- Carrusel de mockups: WhatsApp / Dashboard / Asistente interno -->
+    <!-- Carrusel de mockups: WhatsApp / Dashboard / Asistente interno.
+         Interactivo: tilt 3D al mover el mouse, pausa al hacer hover, control
+         manual con los dots, y el panel de WhatsApp "escribe" en vivo (ver
+         heroCarousel() en el script de abajo). -->
     <div class="relative h-[440px] md:h-[480px]" data-aos="fade-left" data-aos-delay="200"
-         x-data="{ slide: 0, n: 3, timer: null }"
-         x-init="timer = setInterval(() => slide = (slide + 1) % n, 4500)">
+         x-data="heroCarousel()" x-init="init()"
+         @mouseenter="onEnter()" @mouseleave="onLeave()" @mousemove="onMove($event)">
 
-      <!-- Panel 1: Conversación WhatsApp -->
-      <div class="absolute inset-0 transition-all duration-700" :class="slide === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
-        <div class="bg-[#0b141a] rounded-2xl shadow-2xl h-full flex flex-col overflow-hidden border border-white/10">
-          <div class="bg-navy-deep px-4 py-3 flex items-center gap-2.5 border-b border-white/10">
-            <div class="w-8 h-8 rounded-full bg-wa-green flex items-center justify-center text-white text-xs font-medium">FC</div>
-            <div>
-              <div class="text-white text-[13px] font-medium">Asistente Fulcro</div>
-              <div class="text-teal text-[10.5px]">en línea</div>
-            </div>
-          </div>
-          <div class="flex-1 p-4 space-y-3 overflow-hidden" style="background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 16px 16px;">
-            <div class="bg-[#202c33] text-white/90 text-[13px] rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]">Hola, ¿tienen disponibilidad esta semana?</div>
-            <div class="bg-[#005c4b] text-white/90 text-[13px] rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] ml-auto">¡Claro! Tenemos espacio jueves 10am o viernes 4pm. ¿Cuál te acomoda?</div>
-            <div class="bg-[#202c33] text-white/90 text-[13px] rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]">Viernes 4pm perfecto</div>
-            <div class="bg-[#005c4b] text-white/90 text-[13px] rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] ml-auto">Quedaste agendado ✓ Te llega un recordatorio un día antes</div>
-          </div>
-          <div class="px-4 py-3 border-t border-white/10 text-white/30 text-[11px] font-mono">Respuesta automática · 24/7</div>
-        </div>
-      </div>
+      <div class="relative w-full h-full" :style="`transform: perspective(1000px) ${tilt}; transition: transform 0.3s ease-out;`">
 
-      <!-- Panel 2: Dashboard -->
-      <div class="absolute inset-0 transition-all duration-700" :class="slide === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
-        <div class="bg-white rounded-2xl shadow-2xl h-full p-6 border border-white/10">
-          <div class="flex items-center justify-between mb-5">
-            <div class="text-navy font-serif text-lg">Reporte semanal</div>
-            <div class="font-mono text-[10px] text-ink-muted uppercase tracking-wide">Lun 9:00am</div>
-          </div>
-          <div class="grid grid-cols-3 gap-3 mb-5">
-            <div class="bg-blue-light rounded-lg p-3">
-              <div class="text-navy font-serif text-2xl">312</div>
-              <div class="text-[10px] text-ink-muted uppercase tracking-wide">Chats atendidos</div>
+        <!-- Panel 1: Conversación WhatsApp (con efecto de escritura) -->
+        <div class="absolute inset-0 transition-all duration-700" :class="slide === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
+          <div class="bg-[#0b141a] rounded-2xl shadow-2xl h-full flex flex-col overflow-hidden border border-white/10">
+            <div class="bg-navy-deep px-4 py-3 flex items-center gap-2.5 border-b border-white/10">
+              <div class="w-8 h-8 rounded-full bg-wa-green flex items-center justify-center text-white text-xs font-medium">FC</div>
+              <div>
+                <div class="text-white text-[13px] font-medium">Agente de IA de WhatsApp</div>
+                <div class="text-teal text-[10.5px]">en línea</div>
+              </div>
             </div>
-            <div class="bg-teal-light rounded-lg p-3">
-              <div class="text-navy font-serif text-2xl">48s</div>
-              <div class="text-[10px] text-ink-muted uppercase tracking-wide">Tiempo resp.</div>
+            <div class="flex-1 p-4 space-y-3 overflow-hidden" style="background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 16px 16px;">
+              <div class="bg-[#202c33] text-white/90 text-[13px] rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]" x-show="showUser1" x-transition.opacity.duration.300ms x-cloak>Hola, ¿tienen disponibilidad esta semana?</div>
+              <div class="bg-[#202c33] rounded-lg rounded-tl-none px-3 py-2.5 max-w-[80%]" x-show="dots1" x-cloak><span class="fx-dots"><span></span><span></span><span></span></span></div>
+              <div class="bg-[#005c4b] text-white/90 text-[13px] rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] ml-auto" x-show="typed1.length > 0" x-cloak><span x-text="typed1"></span></div>
+              <div class="bg-[#202c33] text-white/90 text-[13px] rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]" x-show="showUser2" x-transition.opacity.duration.300ms x-cloak>Viernes 4pm perfecto</div>
+              <div class="bg-[#202c33] rounded-lg rounded-tl-none px-3 py-2.5 max-w-[80%]" x-show="dots2" x-cloak><span class="fx-dots"><span></span><span></span><span></span></span></div>
+              <div class="bg-[#005c4b] text-white/90 text-[13px] rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] ml-auto" x-show="typed2.length > 0" x-cloak><span x-text="typed2"></span></div>
             </div>
-            <div class="bg-[#FAEEDA] rounded-lg p-3">
-              <div class="text-navy font-serif text-2xl">96%</div>
-              <div class="text-[10px] text-ink-muted uppercase tracking-wide">Satisfacción</div>
+            <div class="px-4 py-3 border-t border-white/10 flex items-center justify-between">
+              <span class="text-white/30 text-[11px] font-mono">Respuesta automática · 24/7</span>
+              <button type="button" onclick="fxOpenWidget()" class="fx-try-btn">Pruébalo tú mismo <i data-lucide="arrow-up-right" class="w-3 h-3"></i></button>
             </div>
-          </div>
-          <div class="flex items-end gap-2 h-24">
-            <div class="flex-1 bg-blue/20 rounded-t" style="height: 55%"></div>
-            <div class="flex-1 bg-blue/40 rounded-t" style="height: 75%"></div>
-            <div class="flex-1 bg-blue/60 rounded-t" style="height: 45%"></div>
-            <div class="flex-1 bg-blue rounded-t" style="height: 90%"></div>
-            <div class="flex-1 bg-blue/50 rounded-t" style="height: 65%"></div>
-            <div class="flex-1 bg-teal rounded-t" style="height: 80%"></div>
-            <div class="flex-1 bg-blue/30 rounded-t" style="height: 40%"></div>
           </div>
         </div>
-      </div>
 
-      <!-- Panel 3: Asistente interno -->
-      <div class="absolute inset-0 transition-all duration-700" :class="slide === 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
-        <div class="bg-navy-deep rounded-2xl shadow-2xl h-full p-6 border border-white/10 flex flex-col">
-          <div class="flex items-center gap-2 mb-5">
-            <i data-lucide="sparkles" class="w-4 h-4 text-blue-bright"></i>
-            <div class="text-white/80 font-mono text-[11px] uppercase tracking-wide">Asistente interno</div>
-          </div>
-          <div class="bg-white/5 rounded-lg p-3 text-white/70 text-[13px] mb-3">"Genérame una cotización para 40 licencias, plan anual"</div>
-          <div class="bg-blue/20 border border-blue/30 rounded-lg p-3 text-white/85 text-[13px] mb-auto">Cotización generada ✓ — PDF listo en 8 segundos, con tus condiciones comerciales vigentes.</div>
-          <div class="flex gap-2 mt-4">
-            <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Políticas internas</span>
-            <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Documentos</span>
-            <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Cotizaciones</span>
+        <!-- Panel 2: Dashboard -->
+        <div class="absolute inset-0 transition-all duration-700" :class="slide === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
+          <div class="bg-white rounded-2xl shadow-2xl h-full p-6 border border-white/10">
+            <div class="flex items-center justify-between mb-5">
+              <div class="text-navy font-serif text-lg">Reporte semanal automático</div>
+              <div class="font-mono text-[10px] text-ink-muted uppercase tracking-wide">Lun 9:00am</div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 mb-5">
+              <div class="bg-blue-light rounded-lg p-3">
+                <div class="text-navy font-serif text-2xl">312</div>
+                <div class="text-[10px] text-ink-muted uppercase tracking-wide">Chats atendidos</div>
+              </div>
+              <div class="bg-teal-light rounded-lg p-3">
+                <div class="text-navy font-serif text-2xl">48s</div>
+                <div class="text-[10px] text-ink-muted uppercase tracking-wide">Tiempo resp.</div>
+              </div>
+              <div class="bg-[#FAEEDA] rounded-lg p-3">
+                <div class="text-navy font-serif text-2xl">96%</div>
+                <div class="text-[10px] text-ink-muted uppercase tracking-wide">Satisfacción</div>
+              </div>
+            </div>
+            <div class="flex items-end gap-2 h-24">
+              <div class="flex-1 bg-blue/20 rounded-t" style="height: 55%"></div>
+              <div class="flex-1 bg-blue/40 rounded-t" style="height: 75%"></div>
+              <div class="flex-1 bg-blue/60 rounded-t" style="height: 45%"></div>
+              <div class="flex-1 bg-blue rounded-t" style="height: 90%"></div>
+              <div class="flex-1 bg-blue/50 rounded-t" style="height: 65%"></div>
+              <div class="flex-1 bg-teal rounded-t" style="height: 80%"></div>
+              <div class="flex-1 bg-blue/30 rounded-t" style="height: 40%"></div>
+            </div>
           </div>
         </div>
+
+        <!-- Panel 3: Asistente interno -->
+        <div class="absolute inset-0 transition-all duration-700" :class="slide === 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'">
+          <div class="bg-navy-deep rounded-2xl shadow-2xl h-full p-6 border border-white/10 flex flex-col">
+            <div class="flex items-center gap-2 mb-5">
+              <img src="https://cdn.simpleicons.org/telegram/378ADD" alt="" class="w-4 h-4" loading="lazy">
+              <div class="text-white/80 font-mono text-[11px] uppercase tracking-wide">Asistente interno en Telegram</div>
+            </div>
+            <div class="bg-white/5 rounded-lg p-3 text-white/70 text-[13px] mb-3">"Genérame una cotización para 40 licencias, plan anual"</div>
+            <div class="bg-blue/20 border border-blue/30 rounded-lg p-3 text-white/85 text-[13px] mb-auto">Cotización generada ✓ — PDF listo en 8 segundos, con tus condiciones comerciales vigentes.</div>
+            <div class="flex gap-2 mt-4">
+              <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Políticas internas</span>
+              <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Documentos</span>
+              <span class="font-mono text-[10px] text-white/40 border border-white/15 rounded-full px-2.5 py-1">Cotizaciones</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Dots -->
       <div class="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
-        <button @click="slide = 0" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 0 ? 'bg-white w-5' : 'bg-white/30'"></button>
-        <button @click="slide = 1" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 1 ? 'bg-white w-5' : 'bg-white/30'"></button>
-        <button @click="slide = 2" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 2 ? 'bg-white w-5' : 'bg-white/30'"></button>
+        <button @click="goTo(0)" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 0 ? 'bg-white w-5' : 'bg-white/30'"></button>
+        <button @click="goTo(1)" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 1 ? 'bg-white w-5' : 'bg-white/30'"></button>
+        <button @click="goTo(2)" class="w-1.5 h-1.5 rounded-full transition-all" :class="slide === 2 ? 'bg-white w-5' : 'bg-white/30'"></button>
       </div>
     </div>
   </div>
@@ -223,14 +236,14 @@
     <div class="flex items-center gap-3.5 font-mono text-[11px] font-medium text-blue tracking-[0.22em] uppercase mb-6">
       <span class="w-7 h-px bg-blue"></span> Soluciones
     </div>
-    <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-navy max-w-3xl mb-6" data-aos="fade-up">
-      Tres formas en las que la <em class="italic text-blue">tecnología trabaja para ti.</em>
+    <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-navy max-w-3xl mb-6 text-center mx-auto" data-aos="fade-up">
+      Así es como la <em class="italic text-blue">tecnología trabaja para ti.</em>
     </h2>
-    <p class="text-[15px] md:text-[17px] font-light max-w-xl mb-16" data-aos="fade-up" data-aos-delay="100">
-      Da clic en cada tarjeta para ver el detalle. Iremos agregando demos en video conforme estén listos.
+    <p class="text-[15px] md:text-[17px] font-light max-w-xl mb-16 mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+      Da clic en cada tarjeta para ver cómo funciona y qué incluye.
     </p>
 
-    <div id="soluciones-categorias" class="space-y-16"></div>
+    <div id="soluciones-grid" class="fx-cards-grid"></div>
   </div>
 </section>
 
@@ -240,7 +253,7 @@
     <span class="w-7 h-px bg-blue"></span> Cómo trabajamos
   </div>
   <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-navy max-w-3xl mb-16" data-aos="fade-up">
-    Diez pasos, <em class="italic text-blue">sin sorpresas en el camino.</em>
+    Cinco pasos, <em class="italic text-blue">sin sorpresas en el camino.</em>
   </h2>
 
   <div class="grid lg:grid-cols-[1fr_340px] gap-14 items-start">
@@ -250,56 +263,31 @@
 
         <div class="relative pb-9">
           <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">1</div>
-          <div class="text-navy font-medium mb-1">Llamada de 15 min</div>
-          <p class="text-[14px]">Definiremos en qué podemos ayudar.</p>
+          <div class="text-navy font-medium mb-1">Diagnóstico</div>
+          <p class="text-[14px]">Llamada breve y un formulario para entender tu operación.</p>
         </div>
         <div class="relative pb-9">
           <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">2</div>
-          <div class="text-navy font-medium mb-1">Formulario híper-personalizado</div>
-          <p class="text-[14px]">Llenas un formulario breve con preguntas clave sobre tu operación.</p>
+          <div class="text-navy font-medium mb-1">Propuesta</div>
+          <p class="text-[14px]">Cotización con alcance y precio claros. Si la aceptas, cubres el anticipo. <span class="text-ink-muted">*</span></p>
         </div>
         <div class="relative pb-9">
           <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">3</div>
-          <div class="text-navy font-medium mb-1">Videollamada de 30 min</div>
-          <p class="text-[14px]">Te presentamos cómo lo haremos.</p>
+          <div class="text-navy font-medium mb-1">Construcción</div>
+          <p class="text-[14px]">Armamos el piloto y te lo entregamos para que lo pruebes en tu operación real.</p>
         </div>
         <div class="relative pb-9">
           <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">4</div>
-          <div class="text-navy font-medium mb-1">Propuesta y cotización</div>
-          <p class="text-[14px]">Te la enviamos por correo, con alcance y precio claros.</p>
-        </div>
-        <div class="relative pb-9">
-          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center font-mono text-[12px]">5</div>
-          <div class="text-navy font-medium mb-1">Aceptación y anticipo</div>
-          <p class="text-[14px]">Si la aceptas, cubres el 50% de anticipo y el resto contra-entrega. <span class="text-ink-muted">*</span></p>
-        </div>
-        <div class="relative pb-9">
-          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">6</div>
-          <div class="text-navy font-medium mb-1">Videollamada de alineación</div>
-          <p class="text-[14px]">30 min para alinear cómo ejecutaremos el proyecto.</p>
-        </div>
-        <div class="relative pb-9">
-          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">7</div>
-          <div class="text-navy font-medium mb-1">Primera entrega async</div>
-          <p class="text-[14px]">Se deja habilitado el piloto para que nos des feedback.</p>
-        </div>
-        <div class="relative pb-9">
-          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">8</div>
-          <div class="text-navy font-medium mb-1">Primera ronda de ajustes</div>
-          <p class="text-[14px]">Se aplican los cambios y se publica la segunda entrega async.</p>
-        </div>
-        <div class="relative pb-9">
-          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center font-mono text-[12px]">9</div>
-          <div class="text-navy font-medium mb-1">Segundo piloto</div>
-          <p class="text-[14px]">Queda habilitado para un segundo round de feedback y ajustes.</p>
+          <div class="text-navy font-medium mb-1">Ajuste</div>
+          <p class="text-[14px]">Una ronda de feedback y refinamiento sobre el piloto.</p>
         </div>
         <div class="relative">
-          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center font-mono text-[12px]">10</div>
-          <div class="text-navy font-medium mb-1">Entrega final</div>
-          <p class="text-[14px]">Entrega final del proyecto y liquidación del pago restante.</p>
+          <div class="absolute -left-10 top-0 w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center font-mono text-[12px]">5</div>
+          <div class="text-navy font-medium mb-1">Traspaso</div>
+          <p class="text-[14px]">El workflow, las cuentas, los accesos y la documentación se transfieren a tu infraestructura. Es tuyo — no depende de Fulcro para seguir operando.</p>
         </div>
       </div>
-      <p class="text-[12px] text-ink-muted mt-8"><span class="text-ink-muted">*</span> Confirma este punto con Fernando — puede variar según el proyecto.</p>
+      <p class="text-[12px] text-ink-muted mt-8"><span class="text-ink-muted">*</span> Esto se confirma en la propuesta de servicio — puede variar según el proyecto.</p>
     </div>
 
     <!-- Diagrama: qué pasa después de la entrega -->
@@ -311,12 +299,12 @@
 
         <div class="flex flex-col items-stretch">
           <div class="rounded-lg bg-navy text-white text-center py-3 px-3 text-[13px] font-medium">
-            10 · Entrega final
+            5 · Traspaso
           </div>
           <div class="w-px h-6 bg-navy/20 mx-auto"></div>
           <div class="rounded-lg bg-teal text-white text-center py-3.5 px-3">
             <div class="text-[13px] font-medium">Handover completo</div>
-            <div class="text-[11px] font-light opacity-85 mt-0.5">Documentación + traspaso de conocimiento a tu equipo</div>
+            <div class="text-[11px] font-light opacity-85 mt-0.5">Arquitectura y recursos transferidos a tu infraestructura, con documentación</div>
           </div>
           <div class="w-px h-6 bg-navy/20 mx-auto"></div>
           <div class="font-mono text-[10px] text-ink-muted uppercase tracking-wide text-center mb-3">Retainer opcional</div>
@@ -374,10 +362,10 @@
         </p>
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-navy/10 border border-navy/15 rounded-xl overflow-hidden my-8">
-          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">500+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Headcount operado</div></div>
-          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">8+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Años en operaciones</div></div>
-          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">BPO</div><div class="font-mono text-[10px] text-ink-muted uppercase">Fintech &amp; servicios</div></div>
-          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">+45%</div><div class="font-mono text-[10px] text-ink-muted uppercase">Facturación en 3 meses</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">10+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Cursos en IA</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">8+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Años en servicio al cliente</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">7+</div><div class="font-mono text-[10px] text-ink-muted uppercase">Proyectos concluidos con éxito</div></div>
+          <div class="bg-white p-4"><div class="font-serif text-2xl text-navy">3</div><div class="font-mono text-[10px] text-ink-muted uppercase">Años de uso avanzado de IA</div></div>
         </div>
 
         <!-- Logo universidad: coloca el archivo en assets/anahuac-mayab.png -->
@@ -432,9 +420,7 @@
     <h2 class="font-serif font-normal text-[clamp(28px,4.5vw,44px)] leading-tight tracking-tight text-white max-w-3xl mb-3" data-aos="fade-up">
       Así se ve <em class="italic text-blue-bright">en la práctica.</em>
     </h2>
-    <p class="text-[14px] text-white/50 mb-16" data-aos="fade-up" data-aos-delay="100">Escenarios de demostración — se reemplazarán por casos reales conforme se sumen clientes.</p>
-
-    <div id="casos-grid" class="grid md:grid-cols-3 gap-6"></div>
+    <div id="casos-grid" class="grid md:grid-cols-3 gap-6 mt-16"></div>
   </div>
 </section>
 
@@ -460,10 +446,10 @@
       <span class="w-6 h-px bg-white/35"></span> Siguiente paso <span class="w-6 h-px bg-white/35"></span>
     </div>
     <h2 class="font-serif font-normal text-[clamp(30px,5vw,48px)] leading-tight tracking-tight mb-5">
-      Una llamada de 15 minutos <em class="italic text-blue-bright">puede ahorrarte cientos de horas</em> al año.
+      Mándame un <em class="italic text-blue-bright">WhatsApp.</em>
     </h2>
     <p class="text-[15px] font-light text-white/70 mb-10 max-w-lg mx-auto">
-      Escríbeme por WhatsApp y platicamos sobre tu negocio — si coincide con lo que necesitas, avanzamos. Si no, no pasa nada.
+      Sin llamadas, a menos que así lo prefieras.
     </p>
     <a href="https://wa.me/529991214977?text=Hola%20Fernando%2C%20me%20interesa%20platicar%20sobre%20mi%20negocio." target="_blank" rel="noopener"
        class="inline-flex items-center gap-2.5 px-7 py-4 bg-wa-green hover:bg-wa-green-dk rounded-lg text-white text-[15px] font-medium transition-all hover:-translate-y-0.5 shadow-[0_8px_24px_rgba(37,211,102,0.25)]">
@@ -526,6 +512,67 @@
   <svg viewBox="0 0 24 24" fill="white" class="w-7 h-7" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- ═════════════════════════════ WIDGET · AGENTE DE IA (MODO DEMO) ═════════════════════════════ -->
+<!-- Responde con datos de ejemplo (ver función fxWidgetData().reply en el script de abajo).
+     Para producción: sustituir la lógica de esa función por un fetch() al webhook de n8n
+     (Chat Trigger + nodo de IA) ya self-hosted, y el widget queda operando en vivo. -->
+<div class="fx-widget" x-data="fxWidgetData()" x-cloak @fx-open.window="open = true">
+  <button type="button" class="fx-widget-btn" @click="toggle()" aria-label="Prueba el agente de IA de Fulcro">
+    <i data-lucide="sparkles" class="w-5 h-5"></i>
+    <span class="fx-widget-btn-label">Prueba el agente de IA</span>
+  </button>
+
+  <div class="fx-panel" x-show="open" x-transition x-cloak @click.outside="open = false">
+    <div class="fx-panel-inner" :class="{ 'fx-panel-inner--training': trainMode }">
+      <div class="fx-chat">
+        <div class="fx-chat-header">
+          <div class="fx-chat-header-left">
+            <div class="fx-avatar">FC</div>
+            <div>
+              <div class="fx-chat-title">Agente de IA · Fulcro</div>
+              <div class="fx-chat-status"><span class="fx-dot"></span> en línea</div>
+            </div>
+          </div>
+          <button type="button" class="fx-close" @click="open = false" aria-label="Cerrar"><i data-lucide="x" class="w-4 h-4"></i></button>
+        </div>
+
+        <div class="fx-chat-body" x-ref="chatBody">
+          <template x-for="(m, i) in messages" :key="i">
+            <div class="fx-msg" :class="m.from === 'user' ? 'fx-msg--user' : 'fx-msg--bot'" x-text="m.text"></div>
+          </template>
+          <div class="fx-msg fx-msg--bot fx-typing" x-show="typing" x-cloak><span></span><span></span><span></span></div>
+        </div>
+
+        <form class="fx-chat-input" @submit.prevent="send()">
+          <input type="text" x-model="draft" placeholder="Escribe un mensaje…" autocomplete="off">
+          <button type="submit" aria-label="Enviar"><i data-lucide="send" class="w-4 h-4"></i></button>
+        </form>
+
+        <button type="button" class="fx-train-toggle" @click="trainMode = !trainMode">
+          <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5"></i>
+          <span x-text="trainMode ? 'Ocultar entrenamiento' : 'Entrena este asistente'"></span>
+        </button>
+      </div>
+
+      <div class="fx-train" x-show="trainMode" x-transition x-cloak>
+        <div class="fx-train-label">Entrena tu asistente</div>
+        <h4 class="fx-train-title">Tú lo entrenas. No es una IA genérica.</h4>
+        <p class="fx-train-copy">Dile cómo quieres que responda, como si fuera tu empleado. Esto es una demo — en tu proyecto real se conecta a tu propia base de conocimiento.</p>
+        <textarea x-model="instruction" maxlength="300" placeholder="Ejemplo: Responde siempre mencionando que el primer diagnóstico es gratis. Usa un tono cercano y directo."></textarea>
+        <div class="fx-train-chips">
+          <button type="button" @click="addChip('Sé más formal en el tono.')">+ Tono</button>
+          <button type="button" @click="addChip('Menciona siempre el diagnóstico gratuito.')">+ Diagnóstico gratis</button>
+          <button type="button" @click="addChip('Prioriza agendar una llamada de 15 min.')">+ Agendar llamada</button>
+        </div>
+        <button type="button" class="fx-train-apply" @click="applyTraining()">Actualizar entrenamiento</button>
+        <p class="fx-train-note" x-show="trained" x-cloak><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Entrenamiento aplicado — pruébalo en el chat.</p>
+      </div>
+    </div>
+
+    <div class="fx-demo-badge"><span class="fx-dot fx-dot--demo"></span> Modo demo — datos de ejemplo</div>
+  </div>
+</div>
+
 <!-- ═════════════════════════════ SCRIPTS ═════════════════════════════ -->
 <script src="data.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
@@ -534,61 +581,222 @@
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
 <script>
-  // ---- Render Soluciones, agrupadas por categoría ----
-  const catContainer = document.getElementById('soluciones-categorias');
-  const catColors = {
-    Experiencia: { chip: 'text-blue bg-blue-light', ring: 'hover:border-blue/30' },
-    Productividad: { chip: 'text-[#4338CA] bg-[#EEF0FD]', ring: 'hover:border-[#4338CA]/30' },
-    Analítica: { chip: 'text-teal bg-teal-light', ring: 'hover:border-teal/30' }
-  };
-  let catDelay = 0;
-  FULCRO_CATEGORIAS.forEach((cat) => {
-    const items = FULCRO_SOLUCIONES.filter(s => s.categoria === cat.nombre);
-    if (!items.length) return;
-    const colors = catColors[cat.nombre] || catColors.Experiencia;
+  // ---- Carrusel del Hero: tilt 3D, pausa en hover, control manual y el
+  // panel de WhatsApp "escribiendo" en vivo (typing dots + texto tecleado). ----
+  function heroCarousel() {
+    const botMsg1 = '¡Claro! Tenemos espacio jueves 10am o viernes 4pm. ¿Cuál te acomoda?';
+    const botMsg2 = 'Quedaste agendado ✓ Te llega un recordatorio un día antes';
+    return {
+      slide: 0,
+      n: 3,
+      paused: false,
+      tilt: 'rotateX(0deg) rotateY(0deg)',
+      cycle: 0,
+      advanceTimer: null,
+      showUser1: false, showUser2: false,
+      dots1: false, dots2: false,
+      typed1: '', typed2: '',
+      init() {
+        this.runPanel1();
+        this.scheduleAdvance();
+      },
+      wait(ms) { return new Promise(r => setTimeout(r, ms)); },
+      typeOut(text, field, alive) {
+        return new Promise(resolve => {
+          let i = 0;
+          const tick = () => {
+            if (!alive()) return resolve();
+            i++;
+            this[field] = text.slice(0, i);
+            if (i < text.length) setTimeout(tick, 22); else resolve();
+          };
+          tick();
+        });
+      },
+      async runPanel1() {
+        this.cycle++;
+        const myCycle = this.cycle;
+        const alive = () => myCycle === this.cycle;
+        this.showUser1 = false; this.showUser2 = false;
+        this.dots1 = false; this.dots2 = false;
+        this.typed1 = ''; this.typed2 = '';
+        await this.wait(300); if (!alive()) return; this.showUser1 = true;
+        await this.wait(650); if (!alive()) return; this.dots1 = true;
+        await this.wait(1000); if (!alive()) return; this.dots1 = false;
+        await this.typeOut(botMsg1, 'typed1', alive); if (!alive()) return;
+        await this.wait(500); if (!alive()) return; this.showUser2 = true;
+        await this.wait(600); if (!alive()) return; this.dots2 = true;
+        await this.wait(900); if (!alive()) return; this.dots2 = false;
+        await this.typeOut(botMsg2, 'typed2', alive); if (!alive()) return;
+      },
+      scheduleAdvance() {
+        clearTimeout(this.advanceTimer);
+        if (this.paused) { this.advanceTimer = setTimeout(() => this.scheduleAdvance(), 400); return; }
+        const dwell = this.slide === 0 ? 8500 : (this.slide === 1 ? 4200 : 4800);
+        this.advanceTimer = setTimeout(() => this.goTo((this.slide + 1) % this.n), dwell);
+      },
+      goTo(i) {
+        this.slide = i;
+        this.cycle++;
+        if (i === 0) this.runPanel1();
+        this.scheduleAdvance();
+      },
+      onEnter() { this.paused = true; },
+      onLeave() {
+        this.paused = false;
+        this.tilt = 'rotateX(0deg) rotateY(0deg)';
+        this.scheduleAdvance();
+      },
+      onMove(e) {
+        const r = e.currentTarget.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        this.tilt = `rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg)`;
+      }
+    };
+  }
 
-    const block = document.createElement('div');
-    block.innerHTML = `
-      <div class="flex items-baseline gap-3 mb-1.5" data-aos="fade-up">
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-mono uppercase tracking-wide ${colors.chip}">${cat.nombre}</span>
-        <span class="text-[13px] text-ink-muted">${cat.desc}</span>
+  // ---- Widget de Agente de IA (Modo demo) ----
+  // NOTA PARA PRODUCCIÓN: sustituir la función reply() de abajo por un fetch() real
+  // al webhook de n8n (Chat Trigger + nodo de IA) ya self-hosted, ej:
+  //   fetch('https://TU-N8N/webhook/agente-fulcro', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({ message: text, instruction: this.instruction })
+  //   }).then(r => r.json()).then(data => { this.messages.push({ from: 'bot', text: data.reply }); this.scrollBottom(); });
+  function fxWidgetData() {
+    return {
+      open: false,
+      trainMode: false,
+      trained: false,
+      typing: false,
+      draft: '',
+      instruction: '',
+      messages: [
+        { from: 'bot', text: 'Hola, soy el agente de IA de Fulcro. Pregúntame sobre agentes de WhatsApp, automatización o precios — o dime cómo quieres que te responda en "Entrena este asistente".' }
+      ],
+      toggle() { this.open = !this.open; },
+      addChip(text) { this.instruction = this.instruction ? this.instruction + ' ' + text : text; },
+      applyTraining() {
+        if (!this.instruction.trim()) return;
+        this.trained = true;
+        this.messages.push({ from: 'bot', text: 'Entendido — a partir de ahora respondo así: "' + this.instruction.trim() + '"' });
+        this.scrollBottom();
+      },
+      scrollBottom() { this.$nextTick(() => { if (this.$refs.chatBody) this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight; }); },
+      reply(userText) {
+        const t = userText.toLowerCase();
+        let base;
+        if (t.includes('precio') || t.includes('costo') || t.includes('cuánto')) {
+          base = 'Depende del alcance de tu proyecto. Después de una llamada breve te mando una propuesta con precio claro — sin paquetes genéricos.';
+        } else if (t.includes('demo') || t.includes('agente')) {
+          base = 'Este chat es justo un agente de IA como el que construyo para negocios — conectado a WhatsApp, Instagram o tu web, con tu propia base de conocimiento.';
+        } else if (t.includes('hola') || t.includes('buenas')) {
+          base = '¡Hola! ¿En qué puedo ayudarte — atención al cliente, cotizaciones automáticas o reportes?';
+        } else {
+          base = 'Gracias por escribir. En un proyecto real, esta respuesta saldría de tu base de conocimiento. ¿Quieres que platiquemos por WhatsApp?';
+        }
+        if (this.trained && this.instruction.trim()) base += ' (' + this.instruction.trim() + ')';
+        return base;
+      },
+      send() {
+        const text = this.draft.trim();
+        if (!text) return;
+        this.messages.push({ from: 'user', text });
+        this.draft = '';
+        this.typing = true;
+        this.scrollBottom();
+        setTimeout(() => {
+          this.typing = false;
+          this.messages.push({ from: 'bot', text: this.reply(text) });
+          this.scrollBottom();
+        }, 700 + Math.random() * 500);
+      }
+    };
+  }
+  function fxOpenWidget() { window.dispatchEvent(new CustomEvent('fx-open')); }
+
+  // ---- Render Soluciones — tarjetas individuales de ancho completo, con flip ----
+  // Frente: panel de diagrama (izquierda) + columna de texto (derecha), para
+  // que el diagrama tenga más protagonismo y el texto nunca se recorte.
+  // Reverso: video/demo (izquierda) + entregables y ejemplo (derecha).
+  const solGrid = document.getElementById('soluciones-grid');
+
+  function stackHTML(steps) {
+    if (!steps || !steps.length) return '';
+    return `
+      <div class="fx-stack">
+        ${steps.map((n, i) => `
+          <div class="fx-stack-node">
+            <div class="fx-stack-icon"><i data-lucide="${n.icono}" class="w-6 h-6"></i></div>
+            <div class="fx-stack-label">${n.label}</div>
+          </div>
+          ${i < steps.length - 1 ? '<div class="fx-stack-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></div>' : ''}
+        `).join('')}
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"></div>
     `;
-    const grid = block.querySelector('div.grid');
+  }
 
-    items.forEach((s) => {
-      const card = document.createElement('div');
-      card.setAttribute('x-data', '{ open: false }');
-      card.setAttribute('data-aos', 'fade-up');
-      card.setAttribute('data-aos-delay', String(catDelay % 400));
-      catDelay += 80;
-      card.className = `bg-white border border-navy/10 rounded-xl p-6 transition-all hover:shadow-lg ${colors.ring}`;
-      card.innerHTML = `
-        <div class="w-10 h-10 rounded-lg ${colors.chip} flex items-center justify-center mb-4">
-          <i data-lucide="${s.icono}" class="w-[18px] h-[18px]"></i>
-        </div>
-        <h3 class="font-serif text-[17px] text-navy mb-2 leading-snug">${s.titulo}</h3>
-        <p class="text-[13.5px] mb-3 leading-relaxed">${s.resumen}</p>
-        ${s.bullets.length ? `
-        <button @click="open = !open" class="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-blue hover:text-blue-bright transition-colors">
-          <span x-text="open ? 'Ver menos' : 'Ver detalle'"></span>
-          <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+  function loomEmbedUrl(shareUrl) {
+    const id = (shareUrl.split('/share/')[1] || '').split(/[?#]/)[0];
+    return id ? `https://www.loom.com/embed/${id}` : '';
+  }
+
+  FULCRO_SOLUCIONES.forEach((s, i) => {
+    const embedUrl = s.demoUrl ? loomEmbedUrl(s.demoUrl) : '';
+    const card = document.createElement('div');
+    card.setAttribute('x-data', '{ flipped: false }');
+    card.setAttribute('data-aos', 'fade-up');
+    card.className = 'fx-flip-card';
+    card.innerHTML = `
+      <div class="fx-flip-inner" :class="flipped ? 'is-flipped' : ''">
+
+        <button type="button" class="fx-flip-front" @click="flipped = true" aria-label="Ver entregables de ${s.titulo}">
+          <div class="fx-front-visual">${stackHTML(s.stack)}</div>
+          <div class="fx-front-text">
+            <div class="fx-front-head">
+              <i data-lucide="${s.icono}" class="w-5 h-5"></i>
+              <h3>${s.titulo}</h3>
+            </div>
+            <p class="fx-front-summary">${s.resumen}</p>
+            ${s.chips && s.chips.length ? `
+            <div class="fx-chip-row">
+              ${s.chips.map(c => `<span class="fx-chip">${c}</span>`).join('')}
+            </div>` : ''}
+            <span class="fx-flip-hint"><i data-lucide="layout-list" class="w-3.5 h-3.5"></i> Ver entregables</span>
+          </div>
         </button>
-        <div x-show="open" x-collapse class="mt-3 pt-3 border-t border-navy/10">
-          <ul class="space-y-1.5 text-[13px] ${s.demoUrl ? 'mb-4' : ''}">
-            ${s.bullets.map(b => `<li class="flex gap-2"><span class="text-blue mt-1">·</span><span>${b}</span></li>`).join('')}
-          </ul>
-          ${s.demoUrl ? `<a href="${s.demoUrl}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-teal"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver demo</a>` : ''}
-        </div>` : (s.demoUrl ? `
-        <div class="pt-1">
-          <a href="${s.demoUrl}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-teal"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver demo</a>
-        </div>` : '')}
-      `;
-      grid.appendChild(card);
-    });
 
-    catContainer.appendChild(block);
+        <div class="fx-flip-back">
+          <button type="button" class="fx-flip-back-close" @click="flipped = false" aria-label="Cerrar"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Volver</button>
+          <div class="fx-flip-back-scroll">
+            <div class="fx-flip-back-content">
+              <div class="fx-back-visual-col">
+                ${embedUrl ? `
+                <div class="fx-visual fx-visual--video">
+                  <iframe src="${embedUrl}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+                </div>` : `
+                <div class="fx-visual">
+                  <div class="fx-visual-inner">
+                    <div class="fx-visual-icon"><i data-lucide="play-circle" class="w-5 h-5"></i></div>
+                    <div class="fx-visual-label">Demo en camino</div>
+                  </div>
+                </div>`}
+              </div>
+              <div class="fx-back-info-col">
+                <h4 class="fx-back-title">${s.titulo}</h4>
+                <ul class="fx-deliverables">
+                  ${s.entregables.map(b => `<li><i data-lucide="check" class="w-4 h-4 fx-check"></i><span>${b}</span></li>`).join('')}
+                </ul>
+                ${s.ejemplo ? `<p class="fx-example">${s.ejemplo}</p>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    `;
+    solGrid.appendChild(card);
   });
 
   // ---- Render Casos de Uso — tarjetas glass con flujo animado ----

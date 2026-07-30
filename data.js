@@ -6,142 +6,167 @@
  * nuevo (por ejemplo, un demo en Loom cuando esté listo), solo agrega
  * un objeto nuevo al arreglo correspondiente — no toques index.html.
  *
- * Campos de cada solución:
- *   id        -> identificador único, sin espacios
- *   categoria -> "Experiencia" | "Productividad" | "Analítica" (agrupa la tarjeta)
- *   titulo    -> título de la tarjeta
- *   resumen   -> 1-2 líneas que aparecen siempre visibles en la tarjeta
- *   bullets   -> detalle que aparece al expandir (opcional, [] si no aplica)
- *   demoUrl   -> link de Loom del demo. Déjalo como "" si aún no existe
- *   icono     -> nombre de ícono de Lucide (lucide.dev/icons)
+ * Campos de cada solución (tarjetas individuales, sin categorías):
+ *   id          -> identificador único, sin espacios
+ *   titulo      -> título del servicio
+ *   resumen     -> 1-2 líneas de beneficio, visibles en el frente
+ *   icono       -> ícono de Lucide para el título (lucide.dev/icons)
+ *   chips       -> (opcional) lista corta de ejemplos como burbujas, debajo
+ *                  del resumen (ej. ["Cotizaciones", "Presentaciones"])
+ *   stack       -> arreglo de 3-4 pasos { icono, label } para el diagrama
+ *                  del frente (workflow / stack de herramientas)
+ *   entregables -> lista que aparece al voltear la tarjeta
+ *   ejemplo     -> micro-ejemplo entre comillas (opcional, "" si no aplica)
+ *   demoUrl     -> link de Loom del demo. "" si aún no existe
+ *                  (mientras tanto se muestra "Demo en camino" al voltear)
  */
 
 const FULCRO_SOLUCIONES = [
-  // ── Experiencia ──────────────────────────────────────────────
   {
-    id: "whatsapp-ia",
-    categoria: "Experiencia",
-    titulo: "Atención 24/7 en WhatsApp",
-    resumen: "Atención bilingüe a tus clientes, impulsada por IA, a cualquier hora.",
+    id: "whatsapp-instagram-ia",
+    titulo: "Agente de IA para WhatsApp e Instagram",
+    resumen: "Responde a tus clientes y genera reservas, rentas y ventas 24/7.",
     icono: "message-circle-heart",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "bandeja-compartida",
-    categoria: "Experiencia",
-    titulo: "Bandeja compartida de conversaciones",
-    resumen: "Todo tu equipo atendiendo desde un solo lugar, sin chats perdidos.",
-    icono: "inbox",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "desempeno-asesores",
-    categoria: "Experiencia",
-    titulo: "Medición de desempeño",
-    resumen: "Tiempos de respuesta y calidad de atención de cada asesor, visibles.",
-    icono: "gauge",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "engagement-web",
-    categoria: "Experiencia",
-    titulo: "Engagement en tu página web",
-    resumen: "Mejora la experiencia de tus visitantes con IA integrada a tu sitio.",
-    icono: "globe",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "seguimiento-recordatorios",
-    categoria: "Experiencia",
-    titulo: "Seguimiento automático",
-    resumen: "Recordatorios en el momento exacto — ningún cliente se pierde.",
-    icono: "bell-ring",
-    bullets: [],
-    demoUrl: ""
-  },
-
-  // ── Productividad ─────────────────────────────────────────────
-  {
-    id: "capacitacion-ia",
-    categoria: "Productividad",
-    titulo: "Capacitación en Claude y ChatGPT",
-    resumen: "Tu equipo aprende a sacarle el máximo provecho a la IA en su trabajo diario.",
-    icono: "graduation-cap",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "propuestas-rapidas",
-    categoria: "Productividad",
-    titulo: "Propuestas comerciales más rápidas",
-    resumen: "Entrega cotizaciones y propuestas antes que la competencia.",
-    icono: "file-text",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "asistente-interno",
-    categoria: "Productividad",
-    titulo: "Asistente interno de IA",
-    resumen: "Entrenado con la información de tu empresa — tu equipo le pregunta y responde.",
-    icono: "sparkles",
-    bullets: [
-      "Genera cotizaciones en segundos, pidiéndoselas por chat.",
-      "Responde preguntas frecuentes, políticas, permisos, vacaciones, etc.",
-      "Acelera la capacitación de nuevos empleados.",
-      "Encuentra cualquier archivo en segundos."
+    stack: [
+      { icono: "message-circle", label: "Cliente escribe por WhatsApp o Instagram" },
+      { icono: "workflow", label: "n8n orquesta la conversación" },
+      { icono: "brain", label: "IA responde con tu base de conocimiento" },
+      { icono: "inbox", label: "Bandeja Chatwoot + CRM" }
     ],
+    entregables: [
+      "Setup completo (herramientas y APIs)",
+      "1 workflow portable de n8n en JSON",
+      "1 base de conocimiento en Docs",
+      "1 base de datos en Sheets",
+      "1 bandeja compartida en Chatwoot",
+      "1 frontend en WhatsApp o Instagram",
+      "1 guía de uso y mantenimiento",
+      "1 CRM ligero"
+    ],
+    ejemplo: "",
+    demoUrl: "https://www.loom.com/share/bff99d7ab4064337be0e268e81f296cc"
+  },
+  {
+    id: "exprime-ia-taller",
+    titulo: "Exprime ChatGPT y/o Claude",
+    resumen: "Taller de IA personalizado. Alineamos agenda en conjunto y capacitamos a tu equipo con un plan diferenciado por rol.",
+    icono: "graduation-cap",
+    stack: [
+      { icono: "calendar-clock", label: "Alineamos agenda con tu equipo" },
+      { icono: "graduation-cap", label: "90 min de taller de IA personalizado" },
+      { icono: "file-text", label: "Notas y documentación del taller" }
+    ],
+    entregables: [
+      "Capacitación en vivo",
+      "Plan de estudios",
+      "Notas del taller",
+      "Recursos creados para y en el marco del proyecto",
+      "30 min de alineación de agenda",
+      "90 min de taller de IA",
+      "15 min de documentación"
+    ],
+    ejemplo: "",
     demoUrl: ""
   },
-
-  // ── Analítica ──────────────────────────────────────────────────
+  {
+    id: "reporte-proyectos",
+    titulo: "Reporte automático de proyectos y tareas",
+    resumen: "Resumen del estado de tus proyectos y tareas, compartido periódicamente contigo y/o tu equipo por WhatsApp o el canal que prefieras.",
+    icono: "list-checks",
+    stack: [
+      { icono: "list-checks", label: "Tu gestor de proyectos" },
+      { icono: "workflow", label: "n8n extrae el avance" },
+      { icono: "clipboard-list", label: "Resumen periódico" },
+      { icono: "send", label: "Enviado por WhatsApp o correo" }
+    ],
+    entregables: [
+      "Setup completo (herramientas y APIs conectadas a tu gestor de proyectos)",
+      "1 workflow portable de n8n en JSON",
+      "Plantilla de reporte periódico",
+      "Entrega automática por WhatsApp, correo o el canal que elijas",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "\"Lunes 9:00am: 12 tareas completadas, 3 en riesgo de retraso, 1 bloqueada — necesita tu input.\"",
+    demoUrl: ""
+  },
+  {
+    id: "google-maps",
+    titulo: "Fortalece tu presencia en Google Maps",
+    resumen: "Optimizamos tu perfil de negocio en Google Business Profile e implementamos un sistema para captar y responder reseñas.",
+    icono: "map-pin",
+    stack: [
+      { icono: "map-pin", label: "Tu perfil de Google Business" },
+      { icono: "workflow", label: "n8n dispara la solicitud post-servicio" },
+      { icono: "star", label: "Cliente deja una reseña" },
+      { icono: "reply", label: "Respuesta automática" }
+    ],
+    entregables: [
+      "Auditoría y optimización de tu perfil de Google Business Profile",
+      "1 workflow portable de n8n en JSON para solicitar reseñas después de cada servicio",
+      "1 sistema de respuesta a reseñas (plantillas + alertas)",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "\"Nueva reseña de 5★ en Google — respondida automáticamente en menos de 1 hora.\"",
+    demoUrl: ""
+  },
+  {
+    id: "resultados-clave",
+    titulo: "Resultados clave, cuando los necesites",
+    resumen: "Recibe tus resultados clave diarios y/o semanales por correo, en el horario que tú elijas — siempre.",
+    icono: "calendar-clock",
+    stack: [
+      { icono: "database", label: "Tus fuentes de datos" },
+      { icono: "workflow", label: "n8n arma el resumen" },
+      { icono: "mail", label: "Reporte enviado a tu correo" }
+    ],
+    entregables: [
+      "Setup completo (herramientas y APIs)",
+      "1 workflow portable de n8n en JSON",
+      "Plantilla de reporte por correo",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "\"Buenos días. Ayer: 42 chats atendidos, 96% satisfacción, 3 ventas cerradas.\"",
+    demoUrl: ""
+  },
   {
     id: "dashboards",
-    categoria: "Analítica",
-    titulo: "Dashboards interactivos",
-    resumen: "Visualiza tus datos con gráficos claros, sin abrir una hoja de cálculo.",
+    titulo: "Decisiones basadas en datos",
+    resumen: "Toma decisiones con paneles interactivos. Todo en un solo lugar.",
     icono: "bar-chart-3",
-    bullets: [],
+    stack: [
+      { icono: "database", label: "Tus fuentes de datos" },
+      { icono: "plug", label: "Conexión en vivo" },
+      { icono: "bar-chart-3", label: "Panel interactivo" }
+    ],
+    entregables: [
+      "Setup completo (herramientas y APIs)",
+      "Conexión a tus fuentes de datos actuales",
+      "1 panel interactivo (dashboard)",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "Panel en vivo: ventas, tiempos de respuesta y satisfacción, actualizados en tiempo real.",
     demoUrl: ""
   },
   {
-    id: "reporte-semanal",
-    categoria: "Analítica",
-    titulo: "Reporte semanal automático",
-    resumen: "Resultados clave en tu correo — mismo día, misma hora, cada semana.",
-    icono: "calendar-clock",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "analisis-por-chat",
-    categoria: "Analítica",
-    titulo: "Análisis por chat",
-    resumen: "Pide un resumen de tus hojas de cálculo o documentos, y lo tienes al instante.",
+    id: "pregunta-a-tus-datos",
+    titulo: "Contrata a tu propio asistente de IA",
+    resumen: "Tu punto de apoyo conectado con la información de tu empresa para que comparta lo que necesites, cuando lo necesites y con el alcance que tú autorices.",
     icono: "message-square-text",
-    bullets: [],
-    demoUrl: ""
-  },
-  {
-    id: "insights-negocio",
-    categoria: "Analítica",
-    titulo: "Insights accionables",
-    resumen: "Convierte los datos que ya captura tu negocio en decisiones concretas.",
-    icono: "lightbulb",
-    bullets: [],
+    chips: ["Cotizaciones", "Presentaciones", "Procesos", "Políticas"],
+    stack: [
+      { icono: "folder", label: "Tus archivos y bases de datos" },
+      { icono: "workflow", label: "n8n conecta todo" },
+      { icono: "message-square-text", label: "Pregúntale como a un asistente" }
+    ],
+    entregables: [
+      "Setup completo (herramientas y APIs)",
+      "Conexión a tus archivos y bases de datos",
+      "1 workflow portable de n8n en JSON",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "\"¿Cuántas reservas tuvimos este mes vs. el anterior?\" → Respuesta al instante.",
     demoUrl: ""
   }
-];
-
-// Categorías — orden y descripción corta para los encabezados de sección
-const FULCRO_CATEGORIAS = [
-  { nombre: "Experiencia", desc: "Cómo viven tus clientes cada interacción contigo.", color: "blue" },
-  { nombre: "Productividad", desc: "Cómo trabaja tu equipo por dentro, todos los días.", color: "indigo" },
-  { nombre: "Analítica", desc: "Cómo ves y decides sobre tu negocio, con datos.", color: "teal" }
 ];
 
 // Casos de uso ilustrativos — deja claro que son escenarios de demostración

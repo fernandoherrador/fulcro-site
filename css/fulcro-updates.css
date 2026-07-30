@@ -1,11 +1,10 @@
 /**
  * fulcro-updates.css
  * -----------------------------------------------------------------
- * Componentes nuevos de la ronda de ajustes (widget de IA, tabs de
- * Soluciones estilo Stripe, listas de entregables, botón "Pruébalo
- * tú mismo"). Se carga después de css/styles.css y reutiliza las
- * mismas variables de color/tipografía ya definidas ahí, para que
- * todo se vea parte del mismo sistema de diseño.
+ * Componentes nuevos de la ronda de ajustes (widget de IA, tarjetas de
+ * Soluciones con flip y diagrama de stack, botón "Pruébalo tú mismo").
+ * Se carga después de css/styles.css y reutiliza las mismas variables
+ * de color/tipografía ya definidas ahí.
  */
 
 [x-cloak] { display: none !important; }
@@ -266,13 +265,11 @@
 }
 
 /* ═══════════════════════ SOLUCIONES — tarjetas de ancho completo ═══════════════════════ */
-/* Una tarjeta por fila, ocupando todo el ancho del contenedor: más protagonismo
-   para el diagrama y el texto nunca se recorta (front/back con dos columnas
-   independientes en vez de todo apilado en una sola). */
+/* Una tarjeta por fila, ocupando todo el ancho del contenedor. */
 .fx-cards-grid { display: flex; flex-direction: column; gap: 22px; }
 
 .fx-flip-card { perspective: 1800px; height: 320px; }
-@media (max-width: 760px) { .fx-flip-card { height: 560px; } }
+@media (max-width: 760px) { .fx-flip-card { height: 660px; } }
 
 .fx-flip-inner {
   position: relative;
@@ -318,7 +315,7 @@
 }
 .fx-front-visual::-webkit-scrollbar { display: none; }
 @media (max-width: 760px) {
-  .fx-front-visual { flex: 0 0 auto; width: 100%; border-right: none; border-bottom: 1px solid rgba(12,35,64,0.08); padding: 22px 16px; }
+  .fx-front-visual { flex: 0 0 auto; width: 100%; border-right: none; border-bottom: 1px solid rgba(12,35,64,0.08); padding: 22px 16px; overflow: visible; }
 }
 
 .fx-front-text { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 24px 26px; min-width: 0; gap: 10px; }
@@ -425,10 +422,10 @@
 }
 
 /* ── Diagrama de workflow/stack (panel del frente de la tarjeta) ────── */
-/* Siempre en una sola fila horizontal (nowrap). El panel padre
-   (.fx-front-visual) tiene scroll horizontal oculto como respaldo para
-   pantallas muy angostas, pero con el ancho actual del panel (58% de la
-   tarjeta) los diagramas de hasta 4 pasos caben sin necesidad de scroll. */
+/* Desktop: una sola fila horizontal (nowrap), con scroll oculto de
+   respaldo si algún diagrama no cupiera. Mobile: se apila vertical para
+   que nada se corte en pantallas angostas (la flecha rota 90° para
+   seguir apuntando "hacia el siguiente paso"). */
 .fx-stack { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: flex-start; justify-content: center; gap: 0; width: max-content; min-width: 100%; margin: 0 auto; }
 .fx-stack-node { display: flex; flex-direction: column; align-items: center; gap: 7px; width: 92px; flex-shrink: 0; }
 .fx-stack-icon {
@@ -451,3 +448,9 @@
   overflow: hidden;
 }
 .fx-stack-arrow { color: var(--color-ink-muted); opacity: 0.45; line-height: 0; align-self: center; margin-top: 20px; flex-shrink: 0; padding: 0 2px; }
+
+@media (max-width: 760px) {
+  .fx-stack { flex-direction: column; flex-wrap: nowrap; align-items: center; width: 100%; min-width: 0; gap: 12px 0; }
+  .fx-stack-node { width: auto; max-width: 240px; }
+  .fx-stack-arrow { margin-top: 0; transform: rotate(90deg); }
+}

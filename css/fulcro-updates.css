@@ -21,8 +21,11 @@
 /* ── SOLUCIONES · tarjetas de ancho completo con flip ──────────────── */
 .fx-cards-grid { display: flex; flex-direction: column; gap: 22px; }
 
-.fx-flip-card { perspective: 1800px; height: 380px; }
-@media (max-width: 760px) { .fx-flip-card { height: 680px; } }
+.fx-flip-card { perspective: 1800px; min-height: 380px; height: 380px; }
+@media (max-width: 760px) { .fx-flip-card { min-height: 640px; height: 640px; } }
+/* La altura exacta la fija fitFlipCards() en JS según el contenido real de
+   cada tarjeta (el diagrama y los entregables varían de largo por servicio);
+   los valores de arriba son solo el respaldo antes de que corra el script. */
 
 .fx-flip-inner {
   position: relative; width: 100%; height: 100%;
@@ -154,6 +157,12 @@
 .fx-visual-illus .fx-illus-chart { height: 66px; gap: 6px; }
 .fx-visual-illus .fx-illus-bar { width: 11px; }
 
+.fx-visual-illus .fx-illus-web-wrap { width: 108px; height: 84px; }
+.fx-visual-illus .fx-illus-browser { width: 64px; height: 48px; }
+
+.fx-visual-illus .fx-illus-crm-wrap { width: 92px; height: 84px; }
+.fx-visual-illus .fx-illus-crm-person { width: 40px; height: 40px; }
+
 /* Contrata a tu propio asistente de IA — chispa + chips en fila (sin traslape) */
 .fx-illus-spark-flex { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .fx-illus-spark-icon { width: 38px; height: 38px; color: var(--color-teal); animation: fx-illus-spin 7s linear infinite; }
@@ -265,6 +274,28 @@
 .fx-illus-tag.t4 { bottom: 0; left: 10px; animation-delay: 3.9s; }
 @keyframes fx-illus-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes fx-illus-orbit { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+/* 8. Crea o mejora tu sitio web */
+.fx-illus-web-wrap { position: relative; width: 130px; height: 100px; display: flex; align-items: center; justify-content: center; }
+.fx-illus-browser { width: 78px; height: 58px; color: var(--color-blue); }
+.fx-illus-browser svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.fx-illus-web-line { position: absolute; height: 5px; border-radius: 3px; background: var(--color-blue-light); animation: fx-illus-type 3.4s ease-in-out infinite; }
+.fx-illus-web-line.l1 { top: 46px; left: 32px; width: 34px; }
+.fx-illus-web-line.l2 { top: 56px; left: 32px; width: 20px; animation-delay: 0.3s; }
+.fx-illus-web-chat { position: absolute; bottom: 4px; right: 20px; width: 24px; height: 24px; color: var(--color-teal); animation: fx-illus-pop-badge 3.4s ease-in-out infinite; }
+.fx-illus-web-chat svg { width: 100%; height: 100%; }
+@keyframes fx-illus-type { 0%, 100% { opacity: 0.4; transform: scaleX(0.7); transform-origin: left; } 50% { opacity: 1; transform: scaleX(1); transform-origin: left; } }
+@keyframes fx-illus-pop-badge { 0%, 20% { opacity: 0; transform: scale(0.4) translateY(6px); } 40%, 85% { opacity: 1; transform: scale(1) translateY(0); } 100% { opacity: 0; transform: scale(0.4) translateY(6px); } }
+
+/* 9. Da seguimiento inteligente con CRM ligero */
+.fx-illus-crm-wrap { position: relative; width: 110px; height: 100px; display: flex; align-items: center; justify-content: center; }
+.fx-illus-crm-person { width: 48px; height: 48px; color: var(--color-blue); }
+.fx-illus-crm-person svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.fx-illus-crm-bell { position: absolute; top: 2px; right: 12px; width: 22px; height: 22px; color: var(--color-teal); animation: fx-illus-bell-ring 2.6s ease-in-out infinite; }
+.fx-illus-crm-bell svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.fx-illus-crm-check { position: absolute; bottom: 6px; left: 8px; width: 18px; height: 18px; color: var(--color-teal); opacity: 0; animation: fx-illus-check-in 3.6s ease-in-out infinite; }
+.fx-illus-crm-check svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes fx-illus-bell-ring { 0%, 100% { transform: rotate(0deg); } 20% { transform: rotate(12deg); } 40% { transform: rotate(-10deg); } 60% { transform: rotate(6deg); } 80% { transform: rotate(0deg); } }
 
 /* ── Reverso de la tarjeta (video/demo + entregables) ───────────────── */
 .fx-flip-back { display: flex; flex-direction: column; transform: rotateY(180deg); }

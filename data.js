@@ -57,13 +57,9 @@ const FULCRO_SOLUCIONES = [
       { icono: "file-text", label: "Notas y documentación del taller" }
     ],
     entregables: [
-      "Capacitación en vivo",
-      "Plan de estudios",
-      "Notas del taller",
-      "Recursos creados para y en el marco del proyecto",
-      "30 min de alineación de agenda",
-      "90 min de taller de IA",
-      "15 min de documentación"
+      "Plan de estudios diferenciado por rol",
+      "90 minutos de capacitación en vivo",
+      "Correo con notas y recursos del taller"
     ],
     ejemplo: "",
     demoUrl: ""
@@ -165,6 +161,48 @@ const FULCRO_SOLUCIONES = [
       "1 guía de uso y mantenimiento"
     ],
     ejemplo: "\"¿Cuántas reservas tuvimos este mes vs. el anterior?\" → Respuesta al instante.",
+    demoUrl: ""
+  },
+  {
+    id: "sitio-web",
+    titulo: "Crea o mejora tu sitio web",
+    resumen: "Construimos tu página web desde cero o la mejoramos — con la opción de integrarle un chatbot de IA.",
+    icono: "globe",
+    stack: [
+      { icono: "search", label: "Diagnóstico de tu sitio o marca" },
+      { icono: "layout-template", label: "Diseño y desarrollo" },
+      { icono: "message-circle", label: "Chatbot integrado (opcional)" },
+      { icono: "rocket", label: "Publicación y entrega" }
+    ],
+    entregables: [
+      "Diagnóstico y propuesta de estructura",
+      "Diseño responsivo (escritorio y móvil)",
+      "Desarrollo e integración de dominio y hosting",
+      "Chatbot de IA integrado (si se contrata)",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "",
+    demoUrl: ""
+  },
+  {
+    id: "crm-ligero",
+    titulo: "Da seguimiento inteligente con CRM ligero",
+    resumen: "Implementamos tecnología de Google o Notion para almacenar información y acciones clave de cada cliente. Se automatizan recordatorios, notificaciones y reportes.",
+    icono: "user-check",
+    stack: [
+      { icono: "user-plus", label: "Cliente y su historial" },
+      { icono: "workflow", label: "n8n organiza las acciones clave" },
+      { icono: "bell", label: "Recordatorios y notificaciones" },
+      { icono: "file-bar-chart", label: "Reportes automáticos" }
+    ],
+    entregables: [
+      "Setup completo (Google Sheets o Notion + APIs)",
+      "1 workflow portable de n8n en JSON",
+      "Automatización de recordatorios y notificaciones",
+      "Plantilla de reporte periódico",
+      "1 guía de uso y mantenimiento"
+    ],
+    ejemplo: "\"Recordatorio automático: dar seguimiento a Cliente X — sin respuesta hace 3 días.\"",
     demoUrl: ""
   }
 ];

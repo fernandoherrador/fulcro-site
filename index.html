@@ -737,6 +737,66 @@
     `;
   }
 
+  // Ilustraciones animadas por servicio (reemplazan el diagrama de flujo del frente)
+  function illustrationHTML(id) {
+    const illus = {
+      'whatsapp-instagram-ia': `
+        <div class="fx-illus fx-illus-phone">
+          <div class="fx-illus-bubble b1"><span class="fx-illus-typedot"></span><span class="fx-illus-typedot"></span><span class="fx-illus-typedot"></span></div>
+          <div class="fx-illus-bubble b2"></div>
+          <div class="fx-illus-bubble b3"><span class="fx-illus-typedot"></span><span class="fx-illus-typedot"></span><span class="fx-illus-typedot"></span></div>
+        </div>`,
+      'exprime-ia-taller': `
+        <div class="fx-illus fx-illus-cap-wrap">
+          <div class="fx-illus-cap"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg></div>
+          <div class="fx-illus-particle p1"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></div>
+          <div class="fx-illus-particle p2"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></div>
+          <div class="fx-illus-particle p3"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></div>
+        </div>`,
+      'reporte-proyectos': `
+        <div class="fx-illus fx-illus-clip-wrap">
+          <div class="fx-illus-clip"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 13h6M9 17h6"/></svg></div>
+          <div class="fx-illus-check c1"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div>
+          <div class="fx-illus-check c2"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div>
+          <div class="fx-illus-check c3"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div>
+          <div class="fx-illus-send"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div>
+        </div>`,
+      'google-maps': `
+        <div class="fx-illus fx-illus-pin-wrap">
+          <div class="fx-illus-ring"></div>
+          <div class="fx-illus-ring r2"></div>
+          <div class="fx-illus-pin"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></div>
+          <div class="fx-illus-star s1">★</div>
+          <div class="fx-illus-star s2">★</div>
+          <div class="fx-illus-star s3">★</div>
+        </div>`,
+      'resultados-clave': `
+        <div class="fx-illus fx-illus-mail-wrap">
+          <div class="fx-illus-ping"></div>
+          <div class="fx-illus-mail"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+        </div>`,
+      'dashboards': `
+        <div class="fx-illus fx-illus-chart">
+          <div class="fx-illus-bar" style="height:40%"></div>
+          <div class="fx-illus-bar" style="height:65%"></div>
+          <div class="fx-illus-bar" style="height:30%"></div>
+          <div class="fx-illus-bar" style="height:80%"></div>
+          <div class="fx-illus-bar" style="height:50%"></div>
+        </div>`,
+      'pregunta-a-tus-datos': `
+        <div class="fx-illus fx-illus-spark-flex">
+          <div class="fx-illus-spark-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></div>
+          <div class="fx-illus-tag-row">
+            <span class="fx-illus-tag-flex" style="animation-delay:0s">Cotizaciones</span>
+            <span class="fx-illus-tag-flex" style="animation-delay:.5s">Presentaciones</span>
+            <span class="fx-illus-tag-flex" style="animation-delay:1s">Procesos</span>
+            <span class="fx-illus-tag-flex" style="animation-delay:1.5s">Políticas</span>
+          </div>
+        </div>`
+    };
+    return illus[id] || '';
+  }
+
   function loomEmbedUrl(shareUrl) {
     const id = (shareUrl.split('/share/')[1] || '').split(/[?#]/)[0];
     return id ? `https://www.loom.com/embed/${id}` : '';
@@ -752,7 +812,13 @@
       <div class="fx-flip-inner" :class="flipped ? 'is-flipped' : ''">
 
         <button type="button" class="fx-flip-front" @click="flipped = true" aria-label="Ver entregables de ${s.titulo}">
-          <div class="fx-front-visual">${stackHTML(s.stack)}</div>
+          <div class="fx-front-visual">
+            <div class="fx-visual-combo">
+              <div class="fx-visual-illus">${illustrationHTML(s.id)}</div>
+              <div class="fx-visual-divider"></div>
+              <div class="fx-visual-flow">${stackHTML(s.stack)}</div>
+            </div>
+          </div>
           <div class="fx-front-text">
             <div class="fx-front-head">
               <i data-lucide="${s.icono}" class="w-5 h-5"></i>
